@@ -1,0 +1,28 @@
+#-- Spring Boot Configuration
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: crm
+  freemarker:
+    template-loader-path: classpath:/
+      
+server:
+  port: 8080
+  context-path: /
+   
+    
+#-- Application Configuration
+app:
+  image:
+    path: C:/images
+    size: 8000000
+    maxWidth: 1200
+    maxHeight: 1200
+    location: C:/image/
+    location.thumb: C:/image/thumb/
+    location.thumb.small: C:/image/sthumb/
+
+  url: souliee.com
+

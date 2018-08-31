@@ -1,0 +1,25 @@
+.avatar {
+	width: 60px !important;
+	height: 60px !important;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+
+.orgName {
+	font-weight: bold;
+}
+
+.alert-success span a {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.fileinput {
+	margin-bottom: 0;
+	display: block;
+}
+
+.fileinput .thumbnail {
+	max-width: 400px;
+}

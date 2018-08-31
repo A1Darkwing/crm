@@ -1,0 +1,29 @@
+#-- Default Spring Boot Configuration
+spring:
+  profiles:
+    active: "dev"
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  http:
+    multipart:
+      max-file-size: 10MB
+    
+#-- Default Server Configuration  
+server:
+  session:
+    timeout: 3600 # Session timeout in seconds: 1 hours
+
+#-- Default Application Configuration
+app:
+  # Method
+  method: https://
+
+
+  # I18n
+  locale:
+    param: lang
+    fallback:
+      lang: vi
+

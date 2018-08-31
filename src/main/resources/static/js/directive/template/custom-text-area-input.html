@@ -1,0 +1,10 @@
+<div class="row {{::csStyle}}">
+  <div class="form-group d-flex align-items-center col-12">
+    <textarea ng-disabled="disabled" rows="5" ng-model="innerModel" id="{{::binding}}" placeholder="{{placeHolder | translate}}"
+              class="form-control col-12 input-group-lg commentTextArea" ng-change="innerOnChange()"></textarea>
+    <a ng-show="inputGuide != null" href ng-click="displayPopover()" class="guide-icon no-underline">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div id="error" class="validate-error col-12 text-right" style="">{{errorMessage | translate}}</div>
+</div>

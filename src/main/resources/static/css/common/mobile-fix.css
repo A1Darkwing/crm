@@ -1,0 +1,136 @@
+@media (max-width: 992px) {
+  .organization-content .organization-nav .nav {
+    padding-left: 169px;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .event-header .container .card-avatar-name {
+    display: none;
+  }
+
+  .navbar .dropdown.show .dropdown-menu, .navbar .dropdown .dropdown-menu {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item):not(.btn) {
+    color: #fff !important;
+  }
+
+  .navbar a:not(.btn):not(.dropdown-item) {
+    color: #FFFFFF !important;
+  }
+
+  #blogView .card-title,
+  #blogView .card-sub-title,
+  #blogView .card-description,
+  #organization-feeling .card-title,
+  #organization-feeling .card-sub-title,
+  #organization-feeling .card-description {
+    padding: 10px 10px 0px !important;
+  }
+
+  #blogView .card-image,
+  #organization-feeling .card-image {
+    background-size: cover;
+  }
+
+  #blogView .card-description img,
+  #organization-feeling .card-description img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn-org-header {
+    max-width: 217px;
+  }
+
+  .event-timeline .event-phase-filter {
+    height: auto !important;
+  }
+
+  .no-pad-left {
+    padding-left: 15px !important;
+  }
+
+  .no-pad-right {
+    padding-right: 15px !important;
+  }
+
+  .cs-input-label,
+  .profile-info .label {
+    text-align: left !important;
+    justify-content: flex-start;
+  }
+
+  .modal-dialog,
+  #blogView .modal-dialog {
+    width: 100% !important;
+  }
+
+  #popupEditOrganizationCover .modal-dialog,
+  .modal-dialog #dropzoneCover,
+  .modal-dialog #dropzone {
+    width: 100% !important;
+  }
+
+  #managePhases .modal-dialog {
+    max-width: 100% !important;
+  }
+
+  #managePhases .modal-body {
+    padding: 0 2px 0 2px !important;
+  }
+
+  #orgMenu {
+    flex-direction: column !important;
+    padding-left: 0px !important;
+    padding-top: 35px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .organization-header .container .card-avatar-name {
+    display: none;
+  }
+
+  .event-timeline {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .profile-page, .scroll-element-parent {
+  }
+  
+  .post-list-inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .timeline-badge {
+    display: none;
+  }
+
+  #post-list {
+    padding-right: 2px;
+  }
+  
+  .timeline > li > .timeline-panel {
+    width: 100%;
+  }
+  
+  .timeline:before {
+    width: 0px;
+}
+
+  .guide-icon {
+    font-size: 22px !important;
+  }
+  
+  .required-mobile {
+    justify-content: flex-end;
+  }
+}

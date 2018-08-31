@@ -1,0 +1,80 @@
+.required:after {
+  content: " *";
+  color: red;
+  font: inherit;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+
+
+/* 
+.form-group label {
+  text-align: right;
+}
+
+.cs-input-group {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.validate-error {
+  color: #c00000;
+}
+
+.input-icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.input-icon a {
+  border-bottom: none !important;
+}
+
+.cs-inline-input {
+  margin-left: 5px;
+}
+
+.cs-inline-input:first-child {
+  margin-left: 0px;
+}
+
+.input-group .form-control textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea.form-control {
+  border: 1px solid #E3E3E3;
+  padding: 5px !important;
+  max-height: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+textarea.form-control:focus,
+textarea.form-control:active {
+  border: 1px solid #f96332;;
+}
+
+.combo-date-picker .bootstrap-select {
+  padding: 2px 0 2px 0;
+}
+
+.bootstrap-select .btn {
+  margin: 0px 0px;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder {
+  color: #FFFFFF;
+}
+
+.combo-date-picker .bootstrap-select {
+  padding-right: 5px !important;
+}
+
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-right: 0 none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+} */

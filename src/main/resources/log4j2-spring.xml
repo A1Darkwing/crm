@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="testConfiguration" monitorInterval="30"
+	schema="Log4J-V2.0.xsd">
+	<Properties>
+		<Property name="log-path">C:/cs_log</Property>
+	</Properties>
+	<Appenders>
+		<Console name="console-appender" target="STDOUT">
+			<PatternLayout>
+				<pattern>
+					%highlight{[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n}
+				</pattern>
+				>
+			</PatternLayout>
+		</Console>
+		<RollingFile name="main-file-appender" append="true"
+			fileName="${log-path}/main.log" filePattern="${log-path}/main-%d{MM-dd-yyyy-HH-mm-ss}_%i.log">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="5 MB" />
+				<OnStartupTriggeringPolicy minSize="0" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="system-file-appender" append="true"
+			fileName="${log-path}/system.log" filePattern="${log-path}/system-%d{MM-dd-yyyy-HH-mm-ss}_%i.log">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="5 MB" />
+				<OnStartupTriggeringPolicy minSize="0" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="job-file-appender" append="true"
+			fileName="${log-path}/runtime.log" filePattern="${log-path}/job-%d{MM-dd-yyyy-HH-mm-ss}_%i.log">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="5 MB" />
+				<OnStartupTriggeringPolicy minSize="0" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="ws-file-appender" append="true"
+			fileName="${log-path}/main.log" filePattern="${log-path}/ws-%d{MM-dd-yyyy-HH-mm-ss}_%i.log">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="5 MB" />
+				<OnStartupTriggeringPolicy minSize="0" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="mainLogger" level="info" additivity="false">
+			<AppenderRef ref="main-file-appender" />
+			<AppenderRef ref="console-appender" />
+		</Logger>
+		<Logger name="systemLogger" level="info" additivity="false">
+			<AppenderRef ref="system-file-appender" />
+			<AppenderRef ref="console-appender" />
+		</Logger>
+		<Logger name="jobLogger" level="info" additivity="false">
+			<AppenderRef ref="job-file-appender" />
+			<AppenderRef ref="console-appender" />
+		</Logger>
+		<Logger name="wsLogger" level="info" additivity="false">
+			<AppenderRef ref="ws-file-appender" />
+			<AppenderRef ref="console-appender" />
+		</Logger>
+		<Root level="info">
+			<AppenderRef ref="console-appender" />
+      <AppenderRef ref="system-file-appender" />
+		</Root>
+	</Loggers>
+</Configuration>
