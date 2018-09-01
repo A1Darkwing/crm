@@ -18,9 +18,8 @@ public class Phone {
   }
   
   
-  public Phone(String id, ContactTypeEnum type, String number) {
+  public Phone(ContactTypeEnum type, String number) {
     super();
-    this.id = id;
     this.type = type;
     this.number = number;
   }

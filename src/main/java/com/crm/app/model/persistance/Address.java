@@ -21,9 +21,8 @@ public class Address {
     super();
   }
   
-  public Address(String id, String street, int unitNumber, String city, String state, String country, int zipCode) {
+  public Address(String street, int unitNumber, String city, String state, String country, int zipCode) {
     super();
-    this.id = id;
     this.street = street;
     this.unitNumber = unitNumber;
     this.city = city;

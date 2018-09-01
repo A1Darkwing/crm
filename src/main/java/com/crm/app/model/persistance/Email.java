@@ -17,9 +17,8 @@ public class Email {
     super();
   }
   
-  public Email(String id, ContactTypeEnum type, String email) {
+  public Email(ContactTypeEnum type, String email) {
     super();
-    this.id = id;
     this.type = type;
     this.email = email;
   }

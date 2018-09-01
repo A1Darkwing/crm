@@ -1,5 +1,10 @@
 package crm.crm;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.crm.app.model.view.GetClientsResponse;
+import com.crm.app.service.ClientService;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -10,6 +15,8 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+	@Autowired
+	  ClientService clientService;
     /**
      * Create the test case
      *
@@ -33,6 +40,8 @@ public class AppTest
      */
     public void testApp()
     {
+    	GetClientsResponse r = clientService.getClients();
+		System.out.println(r);
         assertTrue( true );
     }
 }

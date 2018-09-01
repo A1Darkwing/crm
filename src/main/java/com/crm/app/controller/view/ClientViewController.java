@@ -28,14 +28,14 @@ public class ClientViewController {
     return VIEW_BASE_MAIN + "/dashboard/dashboard-dashboard";
   }
   
-  @GetMapping("/organization")
+  @GetMapping("/data")
   public String adminOrganizationPage() {
-    return VIEW_BASE_MAIN + "/organization/index";
+    return VIEW_BASE_MAIN + "/data/index";
   }
   
-  @GetMapping("/organization/charityfield")
-  public String organizationCharityFieldPage() {
-    return VIEW_BASE_MAIN + "/organization/organization-charityfield";
-  }
+//  @GetMapping("/data")
+//  public String organizationCharityFieldPage() {
+//    return VIEW_BASE_MAIN + "/data/organization-charityfield";
+//  }
   
 }

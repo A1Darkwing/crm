@@ -9,8 +9,8 @@
   <jsp:include page="../../common/commonAdminLibs.jsp"/>
   <link rel="stylesheet" type="text/css" href="/css/admin/organization.css">
   <script src="/js/client/organization/app.js"></script>
-  <script src="/js/client/organization/organization-charity-field-controller.js"></script>
-  <script src="/js/client/organization/organization-service.js"></script>
+  <script src="/js/client/organization/client-controller.js"></script>
+  <script src="/js/client/organization/client-service.js"></script>
 </head>
 <body>
 <div class="wrapper">

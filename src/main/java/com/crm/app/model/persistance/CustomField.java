@@ -17,9 +17,8 @@ public class CustomField {
     super();
   }
   
-  public CustomField(String id, String name, String value) {
+  public CustomField(String name, String value) {
     super();
-    this.id = id;
     this.name = name;
     this.value = value;
   }

@@ -1,29 +1,27 @@
 package com.crm.app.model.view;
 
+import com.crm.app.model.persistance.Client;
+
 public class ClientResponse {
 
   private String id;
-  private String fieldName;
-  private boolean success;
+  private Client client;
   
-  public ClientResponse() {};
+  public ClientResponse() {}
 
-  public ClientResponse(String id, String fieldName, boolean success) {
-    this.id = id;
-    this.fieldName = fieldName;
-    this.success = success;
-  }
+	public String getId() {
+		return id;
+	}
+	
+	public Client getClient() {
+		return client;
+	}
+	
+	public ClientResponse(String id, Client client) {
+		super();
+		this.id = id;
+		this.client = client;
+	};
 
-  public String getId() {
-    return id;
-  }
-
-  public String getFieldName() {
-    return fieldName;
-  }
-
-  public boolean isSuccess() {
-	return success;
-  }
   
 }

@@ -1,28 +1,36 @@
 package com.crm.app.controller.rest;
 
 
-import javax.validation.Valid;
 
-import org.springframework.validation.Errors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.crm.app.model.view.ClientRequest;
 import com.crm.app.model.view.ClientResponse;
+import com.crm.app.model.view.GetClientsResponse;
+import com.crm.app.service.ClientService;
 import com.crm.core.model.JsonResponse;
 
 @RestController
 @RequestMapping(value = "/client/data/")
 public class ClientRestController {
 
-  @PostMapping("/insert")
-  public JsonResponse<Object> clientInsert(@RequestBody @Valid ClientRequest createRequest, Errors errors) {
-
-    return JsonResponse.accept("Hello World");
+  @Autowired
+  ClientService clientService;
+  
+  @GetMapping("/insert")
+  public JsonResponse<Object> clientInsert(@RequestParam ClientRequest request ) {
+    return JsonResponse.accept(clientService.saveClient(request));
   }
   
-  @GetMapping("/get")
-  public JsonResponse<Object> getClient(){
-
-    return JsonResponse.accept(new ClientResponse());
+  /**
+   * load all clients
+   *    
+   * @return getCharityFieldsResponse
+   */
+  @GetMapping("/getClients")
+  public JsonResponse<Object> getClients() {
+    GetClientsResponse loadCharityFieldsResponse = clientService.getClients();
+    return JsonResponse.accept(loadCharityFieldsResponse);
   }
 }

@@ -25,9 +25,8 @@ public class Site {
   }
   
   
-  public Site(String id, String name, List<Address> addresses, List<String> imageIds) {
+  public Site(String name, List<Address> addresses, List<String> imageIds) {
     super();
-    this.id = id;
     this.name = name;
     this.addresses = addresses;
     this.imageIds = imageIds;

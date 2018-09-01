@@ -1,10 +1,13 @@
-/**
- *
- */
 package com.crm.app.service;
 
-import com.crm.app.model.persistance.Organization;
+import com.crm.app.model.persistance.Client;
+import com.crm.app.model.view.ClientRequest;
+import com.crm.app.model.view.ClientResponse;
+import com.crm.app.model.view.GetClientsResponse;
 import com.crm.app.repository.ClientRepository;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +16,28 @@ import org.springframework.stereotype.Service;
 public class ClientService {
 
   @Autowired
-  private ClientRepository organizationRepository;
+  private ClientRepository clientRepository;
 
 
-  public void saveBlog(Organization org) {
-	  organizationRepository.insertOrganization(org);
+  /**
+   * Get Clients
+   * @return GetClientsResponse
+   */
+  public GetClientsResponse getClients() {
+    Collection<Client> clients = clientRepository.getClients();
+    Collection<ClientResponse> clientsResponse = new ArrayList<ClientResponse>();
+    for (Client client : clients) {
+      ClientResponse clientResponse = new ClientResponse(client.getId(), client);
+      clientsResponse.add(clientResponse);
+    }
+
+    return new GetClientsResponse(clientsResponse);
+  }
+  
+  public String saveClient(ClientRequest request) {
+	    Client client = new Client(request.getCompany(), request.getDomain(), 
+	    		request.getIndustry(), request.getAnnnualRevenue(), request.getPhones(), request.getEmails(), request.getAddress(), 
+	            request.getContacts(), request.getSites());
+	  return clientRepository.insertClient(client);
   }
 }

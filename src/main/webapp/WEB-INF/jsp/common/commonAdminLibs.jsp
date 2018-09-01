@@ -29,8 +29,6 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <script src="/libs/components-jqueryui/ui/position.js"></script>
 <script src="/libs/js-polyfills/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-<script src="/libs/datatables.net/js/jquery.dataTables.js"></script>
-<script src="/libs/datatables.net-bs/js/dataTables.bootstrap.js"></script>
 
 <!-- Theme plugin -->
 <script src="/libs/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>

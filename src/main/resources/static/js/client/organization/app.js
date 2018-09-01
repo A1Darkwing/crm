@@ -22,18 +22,15 @@ module.run(function ($rootScope, $location) {
 module.config(['$locationProvider', '$routeProvider', '$httpProvider',
   function ($locationProvider, $routeProvider, $httpProvider) {
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-    var VIEW_BASE_HOME = "/client/organization";
+    var VIEW_BASE_HOME = "/client";
     $locationProvider.hashPrefix('');
 
-    $routeProvider.when('/charityfield', {
-      templateUrl: VIEW_BASE_HOME + '/charityfield',
-      controller: 'OrganizationCharityFieldController',
+    $routeProvider.when('/client/data', {
+      templateUrl: VIEW_BASE_HOME + '/data',
+      controller: 'ClientController',
       resolve: {
-      	validator: function (validationService) {
-          return validationService.createValidator([CHARITY_FIELD_REQUEST]);
-        },
-        charityFieldsData: function (organizationService) {
-          return organizationService.loadFields();
+        clientsData: function (clientService) {
+          return clientService.loadClients;
         }
       }
     }).otherwise({

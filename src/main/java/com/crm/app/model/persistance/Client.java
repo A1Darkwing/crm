@@ -37,10 +37,9 @@ public class Client {
     super();
   }
   
-  public Client(String id, String company, String domain, String industry, double annnualRevenue, List<Phone> phones,
+  public Client(String company, String domain, String industry, double annnualRevenue, List<Phone> phones,
         List<Email> emails, Address address, List<Contact> contacts, List<Site> sites) {
     super();
-    this.id = id;
     this.company = company;
     this.domain = domain;
     this.industry = industry;

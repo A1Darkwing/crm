@@ -24,10 +24,9 @@ public class Contact {
     super();
   };
   
-  public Contact(String id, String firstName, String lastName, TitleTypeEnum title, String imageId,
+  public Contact(String firstName, String lastName, TitleTypeEnum title, String imageId,
       List<Phone> phones, List<Email> emails, List<CustomField> customFields) {
     super();
-    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.title = title;

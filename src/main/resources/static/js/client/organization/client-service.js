@@ -1,10 +1,4 @@
-/**
- * @author Minh Nguyen
- *
- * Copyright(c) 2017
- */
-
-module.service("organizationService", [ '$resource', '$q', '$rootScope',
+module.service("clientService", [ '$resource', '$q', '$rootScope',
 		'$routeParams', 'ajax', '$translate',
 		function($resource, $q, $rootScope, $routeParams, ajax, $translate) {
 		
@@ -21,11 +15,11 @@ module.service("organizationService", [ '$resource', '$q', '$rootScope',
 		  }
 		  
 			/**
-			 * load all Charity Fields
+			 * load all clients
 			 */
-			this.loadFields = function() {
+			this.loadClients = function() {
 				var deferred = $q.defer();
-				ajax.get('/data/organization/loadfields').then(function successCallback(response) {
+				ajax.get('/client/data/getClients').then(function successCallback(response) {
 					deferred.resolve(response.data.result);
 				}, function errorCallback(response) {
 				});
