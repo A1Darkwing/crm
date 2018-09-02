@@ -3,16 +3,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-icon card-header-rose">
-                        <div class="card-icon">
-                            <i class="material-icons">perm_identity</i>
+                    <form>
+                        <div class="card-header card-header-icon card-header-rose">
+                            <div class="card-icon">
+                                <i class="material-icons">perm_identity</i>
+                            </div>
+                            <h4 class="card-title">Company Information -
+                                <small class="category">Please input company information</small>
+                            </h4>
+                            <button type="submit" class="btn btn-rose pull-right">Create Client</button>
+                            <button type="button" class="btn btn-default pull-right">Cancel</button>
                         </div>
-                        <h4 class="card-title">Company Information -
-                            <small class="category">Please input company information</small>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <form>
+                        <br>
+                        <br>
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -590,10 +594,9 @@
                                 </div>
                             </div>
                             <!-- End tab -->
-                            <button type="submit" class="btn btn-rose pull-right">Create Client</button>
                             <div class="clearfix"></div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
