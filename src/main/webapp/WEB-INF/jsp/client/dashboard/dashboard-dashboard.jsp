@@ -68,8 +68,11 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Main</label>
-                                        <input type="text" class="form-control">
+                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Email" tabindex="-98">
+                                            <option class="bs-title-option" value=""></option>
+                                            <option disabled="" selected="">Main</option>
+                                            <option value="2">Other Email</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -101,8 +104,11 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Main</label>
-                                        <input type="text" class="form-control">
+                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Phone" tabindex="-98">
+                                            <option class="bs-title-option" value=""></option>
+                                            <option disabled="" selected="">Main</option>
+                                            <option value="2">Other</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -207,8 +213,11 @@
                                                                 <div class="row">
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Main</label>
-                                                                            <input type="text" class="form-control">
+                                                                            <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98">
+                                                                                <option class="bs-title-option" value=""></option>
+                                                                                <option disabled="" selected="">Main</option>
+                                                                                <option value="2">Other</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-7">
@@ -228,8 +237,11 @@
                                                                 <div class="row">
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Main</label>
-                                                                            <input type="text" class="form-control">
+                                                                            <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Email" tabindex="-98">
+                                                                                <option class="bs-title-option" value=""></option>
+                                                                                <option disabled="" selected="">Main</option>
+                                                                                <option value="2">Other</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-7">
@@ -322,10 +334,11 @@
                                                             <div class="col-md-6">
                                                                 <div class="row">
                                                                     <div class="col-md-4">
-                                                                        <div class="form-group">
-                                                                            <label class="bmd-label-floating">Main</label>
-                                                                            <input type="text" class="form-control">
-                                                                        </div>
+                                                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98">
+                                                                            <option class="bs-title-option" value=""></option>
+                                                                            <option disabled="" selected="">Main</option>
+                                                                            <option value="2">Other</option>
+                                                                        </select>
                                                                     </div>
                                                                     <div class="col-md-7">
                                                                         <div class="form-group">
@@ -344,8 +357,11 @@
                                                                 <div class="row">
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Main</label>
-                                                                            <input type="text" class="form-control">
+                                                                            <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98">
+                                                                                <option class="bs-title-option" value=""></option>
+                                                                                <option disabled="" selected="">Main</option>
+                                                                                <option value="2">Other</option>
+                                                                            </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-7">
@@ -663,3 +679,12 @@
          </div>   
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        //    Activate bootstrap-select
+        if ($(".selectpicker").length != 0) {
+            $(".selectpicker").selectpicker();
+        }
+    });
+</script>
