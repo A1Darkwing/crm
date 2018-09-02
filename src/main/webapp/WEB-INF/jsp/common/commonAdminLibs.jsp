@@ -55,7 +55,9 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <link rel="stylesheet" type="text/css" href="/custom-libs/material/material-dashboard.css">
 
 <script src="/custom-libs/material/material.min.js"></script>
+<!--should loaded after loading field
 <script src="/custom-libs/material/material-dashboard.js"></script>
+-->
 <script src="/custom-libs/material/bootstrap-notify.js"></script>
 
 
