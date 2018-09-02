@@ -15,31 +15,11 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li ng-class="{active: activetab =='/'}">
-                <a class="nav-link" href="/admin/dashboard">
+                <a class="nav-link" href="/client/dashboard">
                     <i class="material-icons">dashboard</i>
-                    <p> Client </p>
+                    <p> Clients </p>
                 </a>
             </li>
-            <!-- TODO
-            <li>
-                <a class="nav-link" class="nav-link" data-toggle="collapse" data-target="#orgNavBar" href="javascript:void(0)">
-                    <i class="material-icons">business_center</i>
-                    <p> Organizations
-                        <b class="caret"></b>
-                    </p>
-                </a>
-                <div class="collapse" id="orgNavBar">
-                    <ul class="nav">
-                        <li ng-class="{active: activetab =='/charityfield'}">
-                            <a class="nav-link" href="/client/organization#/charityfield">
-                                <span class="sidebar-mini"> CF </span>
-                                <span class="sidebar-normal"> Charity Fields </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            -->
         </ul>
     </div>
 </div>

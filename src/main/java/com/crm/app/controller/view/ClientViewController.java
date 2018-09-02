@@ -33,9 +33,9 @@ public class ClientViewController {
     return VIEW_BASE_MAIN + "/data/index";
   }
   
-//  @GetMapping("/data")
-//  public String organizationCharityFieldPage() {
-//    return VIEW_BASE_MAIN + "/data/organization-charityfield";
-//  }
+  @GetMapping("/data/view")
+  public String organizationCharityFieldPage() {
+    return VIEW_BASE_MAIN + "/data/client-view";
+  }
   
 }

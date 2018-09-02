@@ -600,5 +600,66 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Show all clients -->
+       <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Clients</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Company</th>
+                                        <th>Domain</th>
+                                        <th>Industry</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in clientsSource track by $index">
+                                        <td class="text-center">{{$index}}</td>
+                                        <td>
+                                        	<div ng-hide="editingData[$index]">{{item.client.company}}</div>
+                                        </td>
+                                        <td>
+                                        	<div ng-hide="editingData[$index]">{{item.client.domain}}</div>
+                                        </td>
+                                        <td>
+                                        	<div ng-hide="editingData[$index]">{{item.client.industry}}</div>
+                                        </td>
+                                        <td class="td-actions text-right">
+                                            <button  type="button" rel="tooltip" class="btn btn-success btn-round"
+                                            	ng-hide="editingData[$index]" ng-click="modify($index)">
+                                            	<span class="input-group-text">
+                                                  <i class="material-icons">build</i>
+                                                </span>
+                                            </button>
+                               				<button  type="button" rel="tooltip" class="btn btn-success btn-round"
+                               					ng-show="editingData[$index]" ng-click="updateClient(item, $index)">
+                               					<span class="input-group-text">
+                                                  <i class="material-icons">done</i>
+                                                </span>
+                               				</button>
+                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round"
+                                            ng-click="removeClient(item)">
+                                                <span class="input-group-text">
+                                                  <i class="material-icons">close</i>
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>   
     </div>
 </div>

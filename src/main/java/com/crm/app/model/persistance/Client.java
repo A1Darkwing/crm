@@ -1,5 +1,6 @@
 package com.crm.app.model.persistance;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -34,7 +35,15 @@ public class Client {
   private List<Site> sites;
   
   public Client() {
-    super();
+    this.company = "";
+    this.domain = "";
+    this.industry = "";
+    this.annnualRevenue = 0;
+    this.phones = new ArrayList<Phone>();
+    this.emails = new ArrayList<Email>();
+    this.address = new Address();
+    this.contacts = new ArrayList<Contact>();
+    this.sites = new ArrayList<Site>();
   }
   
   public Client(String company, String domain, String industry, double annnualRevenue, List<Phone> phones,

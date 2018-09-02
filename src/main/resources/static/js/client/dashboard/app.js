@@ -1,8 +1,3 @@
-/**
- * App for Home Component
- *
- * Copyright(c) 2017 Thanh Vo
- */
 var module = angular.module('dashboardApp', ['interceptor', 'ngRoute', 'ngResource', 'commonModule', 'i18n']);
 
 // Trigger the initiation of UI when ng-view is loaded via AngularJS Routes
@@ -25,7 +20,16 @@ module.config(['$locationProvider', '$routeProvider', '$httpProvider',
     $locationProvider.hashPrefix('');
 
     $routeProvider.when('/', {
-      templateUrl: VIEW_BASE_HOME + '/dashboard'
+      templateUrl: VIEW_BASE_HOME + '/dashboard',
+      controller: 'ClientController',
+      resolve: {
+        clientsData: function (clientService) {
+          return clientService.loadClients();
+        },
+        clientModel: function (clientService) {
+	      return clientService.initClient();
+	    }
+      }
     }).otherwise({
       redirectTo: '/'
     });

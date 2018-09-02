@@ -9,6 +9,7 @@ import com.crm.app.repository.ClientRepository;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +40,30 @@ public class ClientService {
 	    		request.getIndustry(), request.getAnnnualRevenue(), request.getPhones(), request.getEmails(), request.getAddress(), 
 	            request.getContacts(), request.getSites());
 	  return clientRepository.insertClient(client);
+  }
+  
+  /**
+   * Remove Client
+   *
+   * @param clientId String
+   * @return boolean
+   */
+  public boolean removeClient(String clientId) {
+
+    boolean result =  clientRepository.removeClient(clientId);
+    return result;
+  }
+  
+  /**
+   * update Client
+   * @param updateRequest ClientRequest
+   * @return ClientResponse
+   */
+  public ClientResponse updateCharityField(ClientRequest updateRequest) {
+    if (updateRequest == null || StringUtils.isBlank(updateRequest.getId())) {
+      return new ClientResponse();
+    }
+    boolean result = clientRepository.updateClient(updateRequest);
+    return new ClientResponse();
   }
 }

@@ -8,6 +8,8 @@
   <title>CRM</title>
   <jsp:include page="../../common/commonAdminLibs.jsp"/>
   <script src="/js/client/dashboard/app.js"></script>
+  <script src="/js/client/dashboard/client-controller.js"></script>
+  <script src="/js/client/dashboard/client-service.js"></script>
 </head>
 <body>
 <div class="wrapper">

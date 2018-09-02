@@ -8,16 +8,21 @@ import com.crm.app.model.persistance.Email;
 import com.crm.app.model.persistance.Phone;
 import com.crm.app.model.persistance.Site;
 import com.crm.app.model.persistance.TitleTypeEnum;
+import com.crm.app.model.view.ClientRequest;
 import com.crm.core.BaseRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.mongodb.WriteResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -40,6 +45,42 @@ public class ClientRepository extends BaseRepository {
     getMongoOperations().insert(client);
     return client.getId();
   }
+  
+  /**
+   * Remove Client
+   * @param clientId
+   * @return boolean
+   */
+	public boolean removeClient(String clientId) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("_id").is(clientId));
+		WriteResult result = getMongoOperations().remove(query, Client.class);
+    return result.wasAcknowledged();
+	}
+	
+	/**
+	 * Update Client
+	 * 
+	 * @param updateRequest ClientRequest
+	 * @return boolean
+	 */
+	public boolean updateClient(ClientRequest updateRequest) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("_id").is(updateRequest.getId()));
+		Update update = new Update();
+		update.set("company", updateRequest.getCompany());
+		update.set("domain", updateRequest.getDomain());
+		update.set("industry", updateRequest.getIndustry());
+		update.set("annualRevenue", updateRequest.getAnnnualRevenue());
+		update.set("phones", updateRequest.getPhones());
+		update.set("emails", updateRequest.getEmails());
+		update.set("address", updateRequest.getAddress());
+		update.set("contacts", updateRequest.getContacts());
+		update.set("sites", updateRequest.getSites());
+		
+		WriteResult result = getMongoOperations().updateFirst(query, update, Client.class);
+		return result.isUpdateOfExisting();
+	}
     
   public static void main(String[] args) throws JsonProcessingException {
     Phone p1 = new Phone(ContactTypeEnum.MAIN, "+028-3457-980");
