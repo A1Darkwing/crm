@@ -45,15 +45,28 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <script src="/libs/jasny-bootstrap/js/fileinput.js"></script>
 
 <!-- Bootstrap CSS -->
+<!--
 <link rel="stylesheet" type="text/css" href="/libs/bootstrap3/dist/css/bootstrap.min.css">
+-->
 <script src="/libs/bootstrap3/dist/js/bootstrap.min.js"></script>
 
 <!-- UI -->
+
 <link rel="stylesheet" type="text/css" href="/custom-libs/material/material-dashboard.css">
+
 <script src="/custom-libs/material/material.min.js"></script>
 <script src="/custom-libs/material/material-dashboard.js"></script>
 <script src="/custom-libs/material/bootstrap-notify.js"></script>
+
+
+
+<script src="/custom-libs/material/core/popper.min.js" type="text/javascript"></script>
+<script src="/custom-libs/material/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/custom-libs/material/core/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+
+<!--
 <link rel="stylesheet" type="text/css" href="/css/common/admin.css">
+-->
 <script src="/libs/autosize/dist/autosize.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/common/mobile-fix.css">
 
@@ -100,8 +113,9 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 
 <!-- Angular Tags input -->
 <script src="/libs/ng-tags-input/build/ng-tags-input.min.js"></script>
+<!--
 <link rel="stylesheet" type="text/css" href="/css/common/ng-tags-input-custom.css">
-
+-->
 <!-- Angular ngComboDatePicker -->
 
 <link rel="stylesheet" type="text/css" href="/libs/angular-auto-complete/angular-auto-complete.css">

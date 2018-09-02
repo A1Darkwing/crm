@@ -8,7 +8,7 @@ var module = angular.module('dashboardApp', ['interceptor', 'ngRoute', 'ngResour
 // Trigger the initiation of UI when ng-view is loaded via AngularJS Routes
 module.run(function ($rootScope, $location) {
   $rootScope.$on('$viewContentLoaded', function (event, current, previous) {
-    initUI();
+    //initUI();//TODO check
   });
   var path = function () {
     return $location.path();

@@ -1,36 +1,33 @@
-/*! =========================================================
- *
- * Material Dashboard PRO - V1.2.1
- *
- * =========================================================
- *
- * Copyright 2016 Creative Tim (http://www.creative-tim.com/product/material-dashboard-pro)
- *
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \|     |// '.
- *                 / \|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \\  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
- * ========================================================= */
+/*!
+
+ =========================================================
+ * Material Dashboard - v2.1.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/material-dashboard
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+
+ * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+(function() {
+    isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+
+    if (isWindows) {
+        // if we are on windows OS we activate the perfectScrollbar function
+        //$('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+        $('html').addClass('perfect-scrollbar-on');
+    } else {
+        $('html').addClass('perfect-scrollbar-off');
+    }
+})();
+
 
 var breakCards = true;
 
@@ -52,35 +49,18 @@ var seq2 = 0,
     delays2 = 80,
     durations2 = 500;
 
+$(document).ready(function() {
 
-function initUI() {
-    isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
-  
-    if (isWindows && !$('body').hasClass('sidebar-mini')) {
-        // if we are on windows OS we activate the perfectScrollbar function
-        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-  
-        $('html').addClass('perfect-scrollbar-on');
-    } else {
-        $('html').addClass('perfect-scrollbar-off');
-    }
+    $('body').bootstrapMaterialDesign();
 
     $sidebar = $('.sidebar');
 
-    $.material.init();
-
     md.initSidebarsCheck();
-
-    if ($('body').hasClass('sidebar-mini')) {
-        md.misc.sidebar_mini_active = true;
-    }
 
     window_width = $(window).width();
 
     // check if there is an image set for the sidebar's background
     md.checkSidebarImage();
-
-    md.initMinimizeSidebar();
 
     //    Activate bootstrap-select
     if ($(".selectpicker").length != 0) {
@@ -90,56 +70,11 @@ function initUI() {
     //  Activate the tooltips
     $('[rel="tooltip"]').tooltip();
 
-    //removed class label and label-color from tag span and replaced with data-color
-    var tagClass = $('.tagsinput').data('color');
-
-    $('.tagsinput').tagsinput({
-        tagClass: ' tag-' + tagClass + ' '
-    });
-
-    //    Activate bootstrap-select
-    $(".select").dropdown({
-        "dropdownClass": "dropdown-menu",
-        "optionClass": ""
-    });
-
     $('.form-control').on("focus", function() {
         $(this).parent('.input-group').addClass("input-group-focus");
     }).on("blur", function() {
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
-
-
-    if (breakCards == true) {
-        // We break the cards headers if there is too much stress on them :-)
-        $('[data-header-animation="true"]').each(function() {
-            var $fix_button = $(this)
-            var $card = $(this).parent('.card');
-
-            $card.find('.fix-broken-card').click(function() {
-                console.log(this);
-                var $header = $(this).parent().parent().siblings('.card-header, .card-image');
-
-                $header.removeClass('hinge').addClass('fadeInDown');
-
-                $card.attr('data-count', 0);
-
-                setTimeout(function() {
-                    $header.removeClass('fadeInDown animate');
-                }, 480);
-            });
-
-            $card.mouseenter(function() {
-                var $this = $(this);
-                hover_count = parseInt($this.attr('data-count'), 10) + 1 || 0;
-                $this.attr("data-count", hover_count);
-
-                if (hover_count >= 20) {
-                    $(this).children('.card-header, .card-image').addClass('hinge animated');
-                }
-            });
-        });
-    }
 
     // remove class has-error for checkbox validation
     $('input[type="checkbox"][required="true"], input[type="radio"][required="true"]').on('click', function() {
@@ -147,10 +82,10 @@ function initUI() {
             $(this).closest('div').removeClass('has-error');
         }
     });
-    
-};
 
-$(document).on('click', '.navbar-toggle', function() {
+});
+
+$(document).on('click', '.navbar-toggler', function() {
     $toggle = $(this);
 
     if (mobile_menu_visible == 1) {
@@ -203,6 +138,13 @@ $(document).on('click', '.navbar-toggle', function() {
 // activate collapse right menu when the windows is resized
 $(window).resize(function() {
     md.initSidebarsCheck();
+
+    // reset the seq for charts drawing animations
+    seq = seq2 = 0;
+
+    setTimeout(function() {
+        md.initDashboardPageCharts();
+    }, 500);
 });
 
 md = {
@@ -222,8 +164,57 @@ md = {
         }
     },
 
+    initFormExtendedDatetimepickers: function() {
+        $('.datetimepicker').datetimepicker({
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
+
+        $('.datepicker').datetimepicker({
+            format: 'MM/DD/YYYY',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
+
+        $('.timepicker').datetimepicker({
+            //          format: 'H:mm',    // use this format if you want the 24hours timepicker
+            format: 'h:mm A', //use this format if you want the 12hours timpiecker with AM/PM toggle
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+
+            }
+        });
+    },
+
+
     initSliders: function() {
-        // Sliders for demo purpose in refine cards section
+        // Sliders for demo purpose
         var slider = document.getElementById('sliderRegular');
 
         noUiSlider.create(slider, {
@@ -252,6 +243,106 @@ md = {
             if ($sidebar.length != 0) {
                 md.initRightMenu();
             }
+        }
+    },
+
+    initDashboardPageCharts: function() {
+
+        if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
+            /* ----------==========     Daily Sales Chart initialization    ==========---------- */
+
+            dataDailySalesChart = {
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                series: [
+                    [12, 17, 7, 17, 23, 18, 38]
+                ]
+            };
+
+            optionsDailySalesChart = {
+                lineSmooth: Chartist.Interpolation.cardinal({
+                    tension: 0
+                }),
+                low: 0,
+                high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+                chartPadding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+            }
+
+            var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+
+            md.startAnimationForLineChart(dailySalesChart);
+
+
+
+            /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
+
+            dataCompletedTasksChart = {
+                labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+                series: [
+                    [230, 750, 450, 300, 280, 240, 200, 190]
+                ]
+            };
+
+            optionsCompletedTasksChart = {
+                lineSmooth: Chartist.Interpolation.cardinal({
+                    tension: 0
+                }),
+                low: 0,
+                high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+                chartPadding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                }
+            }
+
+            var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
+
+            // start animation for the Completed Tasks Chart - Line Chart
+            md.startAnimationForLineChart(completedTasksChart);
+
+
+            /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+
+            var dataWebsiteViewsChart = {
+                labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+                series: [
+                    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+
+                ]
+            };
+            var optionsWebsiteViewsChart = {
+                axisX: {
+                    showGrid: false
+                },
+                low: 0,
+                high: 1000,
+                chartPadding: {
+                    top: 0,
+                    right: 5,
+                    bottom: 0,
+                    left: 0
+                }
+            };
+            var responsiveOptions = [
+                ['screen and (max-width: 640px)', {
+                    seriesBarDistance: 5,
+                    axisX: {
+                        labelInterpolationFnc: function(value) {
+                            return value[0];
+                        }
+                    }
+                }]
+            ];
+            var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
+
+            //start animation for the Emails Subscription Chart
+            md.startAnimationForBarChart(websiteViewsChart);
         }
     },
 
@@ -299,13 +390,13 @@ md = {
         $sidebar_wrapper = $('.sidebar-wrapper');
 
         if (!mobile_menu_initialized) {
-            $navbar = $('nav').find('.navbar-collapse').children('.navbar-nav.navbar-right');
+            $navbar = $('nav').find('.navbar-collapse').children('.navbar-nav');
 
             mobile_menu_content = '';
 
             nav_content = $navbar.html();
 
-            nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
+            nav_content = '<ul class="nav navbar-nav nav-mobile-menu">' + nav_content + '</ul>';
 
             navbar_form = $('nav').find('.navbar-form').get(0).outerHTML;
 
@@ -336,39 +427,6 @@ md = {
             }
         }
     }, 200),
-
-
-    // initBootstrapNavbarMenu: debounce(function(){
-    //
-    //     if(!bootstrap_nav_initialized){
-    //         $navbar = $('nav').find('.navbar-collapse').first().clone(true);
-    //
-    //         nav_content = '';
-    //         mobile_menu_content = '';
-    //
-    //         //add the content from the regular header to the mobile menu
-    //         $navbar.children('ul').each(function(){
-    //             content_buff = $(this).html();
-    //             nav_content = nav_content + content_buff;
-    //         });
-    //
-    //         nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
-    //
-    //         $navbar.html(nav_content);
-    //         $navbar.addClass('off-canvas-sidebar');
-    //
-    //         // append it to the body, so it will come from the right side of the screen
-    //         $('body').append($navbar);
-    //
-    //         $toggle = $('.navbar-toggle');
-    //
-    //         $navbar.find('a').removeClass('btn btn-round btn-default');
-    //         $navbar.find('button').removeClass('btn-round btn-fill btn-info btn-primary btn-success btn-danger btn-warning btn-neutral');
-    //         $navbar.find('button').addClass('btn-simple btn-block');
-    //
-    //         bootstrap_nav_initialized = true;
-    //     }
-    // }, 500),
 
     startAnimationForLineChart: function(chart) {
 
@@ -419,7 +477,6 @@ md = {
         seq2 = 0;
     }
 }
-
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for

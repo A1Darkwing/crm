@@ -6,7 +6,7 @@
 -->
     <div class="logo">
         <a href="/client/dashboard" class="simple-text logo-mini">
-             
+
         </a>
         <a href="/client/dashboard" class="simple-text logo-normal">
             CRM DEMO
@@ -15,13 +15,14 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li ng-class="{active: activetab =='/'}">
-                <a href="/admin/dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="material-icons">dashboard</i>
-                    <p> Dashboard </p>
+                    <p> Client </p>
                 </a>
             </li>
+            <!-- TODO
             <li>
-                <a data-toggle="collapse" data-target="#orgNavBar" href="javascript:void(0)">
+                <a class="nav-link" class="nav-link" data-toggle="collapse" data-target="#orgNavBar" href="javascript:void(0)">
                     <i class="material-icons">business_center</i>
                     <p> Organizations
                         <b class="caret"></b>
@@ -30,7 +31,7 @@
                 <div class="collapse" id="orgNavBar">
                     <ul class="nav">
                         <li ng-class="{active: activetab =='/charityfield'}">
-                            <a href="/client/organization#/charityfield">
+                            <a class="nav-link" href="/client/organization#/charityfield">
                                 <span class="sidebar-mini"> CF </span>
                                 <span class="sidebar-normal"> Charity Fields </span>
                             </a>
@@ -38,6 +39,7 @@
                     </ul>
                 </div>
             </li>
+            -->
         </ul>
     </div>
 </div>
