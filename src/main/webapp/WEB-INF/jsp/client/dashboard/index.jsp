@@ -22,5 +22,6 @@
 		<jsp:include page="../footer.jsp"/>	
         </div>
     </div>
+    <script src="/custom-libs/material/material-dashboard.js"></script>
 </body>
 </html>
