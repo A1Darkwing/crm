@@ -15,7 +15,7 @@ public class Site {
   
   private String name;
   
-  private List<Address> addresses;
+  private Address address;
   
   private List<String> imageIds;
 
@@ -25,10 +25,10 @@ public class Site {
   }
   
   
-  public Site(String name, List<Address> addresses, List<String> imageIds) {
+  public Site(String name, Address address, List<String> imageIds) {
     super();
     this.name = name;
-    this.addresses = addresses;
+    this.address = address;
     this.imageIds = imageIds;
   }
 
@@ -48,12 +48,12 @@ public class Site {
     this.name = name;
   }
 
-  public List<Address> getAddresses() {
-    return addresses;
+  public Address getAddress() {
+    return address;
   }
 
-  public void setAddresses(List<Address> addresses) {
-    this.addresses = addresses;
+  public void setAddress(Address address) {
+    this.address = address;
   }
 
   public List<String> getImageIds() {
