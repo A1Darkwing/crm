@@ -37,7 +37,8 @@ public class ClientService {
   
   public String saveClient(ClientRequest request) {
 	    Client client = new Client(request.getCompany(), request.getDomain(), 
-	    		request.getIndustry(), request.getAnnnualRevenue(), request.getPhones(), request.getEmails(), request.getAddress(), 
+	    		request.getIndustry(), request.getAnnnualRevenue(), 
+	    		request.getNumberOfEmployees() ,request.getPhones(), request.getEmails(), request.getAddress(), 
 	            request.getContacts(), request.getSites());
 	  return clientRepository.insertClient(client);
   }

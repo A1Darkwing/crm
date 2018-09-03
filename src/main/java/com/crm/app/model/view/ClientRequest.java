@@ -19,6 +19,8 @@ public class ClientRequest {
 	  
 	  private double annnualRevenue;
 	  
+	  private int numberOfEmployees;
+	  
 	  private List<Phone> phones;
 	  
 	  private List<Email> emails;
@@ -31,20 +33,6 @@ public class ClientRequest {
 	  
 	  public ClientRequest() {
 	    super();
-	  }
-	  
-	  public ClientRequest(String company, String domain, String industry, double annnualRevenue, List<Phone> phones,
-	        List<Email> emails, Address address, List<Contact> contacts, List<Site> sites) {
-	    super();
-	    this.company = company;
-	    this.domain = domain;
-	    this.industry = industry;
-	    this.annnualRevenue = annnualRevenue;
-	    this.phones = phones;
-	    this.emails = emails;
-	    this.address = address;
-	    this.contacts = contacts;
-	    this.sites = sites;
 	  }
 
 	  public String getId() {
@@ -86,4 +74,9 @@ public class ClientRequest {
 	  public List<Site> getSites() {
 	    return sites;
 	  }
+
+	public int getNumberOfEmployees() {
+		return numberOfEmployees;
+	}
+	  
 }

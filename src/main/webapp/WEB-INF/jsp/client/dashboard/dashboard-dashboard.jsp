@@ -11,7 +11,8 @@
                             <h4 class="card-title">Company Information -
                                 <small class="category">Please input company information</small>
                             </h4>
-                            <button type="submit" class="btn btn-rose pull-right">Create Client</button>
+                            <button type="button" class="btn btn-rose pull-right" 
+                            	ng-click="createClient()">Create Client</button>
                             <button type="button" class="btn btn-default pull-right">Cancel</button>
                         </div>
                         <br>
@@ -21,13 +22,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Company Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.company">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Street Address</label>
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" ng-model="client.address.street">
                                     </div>
                                 </div>
                             </div>
@@ -35,13 +36,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Company Domain Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.domain">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Unit Number</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" 
+                                        	ng-model="client.address.unitNumber">
                                     </div>
                                 </div>
                             </div>
@@ -49,36 +51,38 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Company Industry</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.industry">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">City</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.address.city">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">State</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.address.state">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Email" tabindex="-98">
+                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" 
+                                        	title="Email Type" tabindex="-98"
+                                        	ng-model="client.emails[0].type">
                                             <option class="bs-title-option" value=""></option>
-                                            <option disabled="" selected="">Main</option>
-                                            <option value="2">Other Email</option>
+                                            <option value="Main">Main</option>
+                                            <option value="Other">Other Email</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email</label>
-                                        <input type="text" class="form-control">
+                                        <input type="email" class="form-control" ng-model="client.emails[0].email">
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -91,30 +95,31 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Country</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.address.country">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Zip Code</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="client.address.zip">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Phone" tabindex="-98">
+                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" 
+                                         title="Phone Type" tabindex="-98" ng-model="client.phones[0].type">
                                             <option class="bs-title-option" value=""></option>
-                                            <option disabled="" selected="">Main</option>
-                                            <option value="2">Other</option>
+                                            <option value="Main">Main</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Email</label>
-                                        <input type="text" class="form-control">
+                                        <label class="bmd-label-floating">Phone</label>
+                                        <input type="number" class="form-control" ng-model="client.phones[0].number">
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -131,7 +136,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Number of Employees</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" ng-model="client.company">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

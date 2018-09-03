@@ -28,11 +28,8 @@ module.controller('ClientController',[
     };
 
    $scope.createClient = function() {
-     var charityField = {
-    		 "fieldName": $scope.fieldName
-     };
 
-     clientService.insertClient(client)
+     clientService.insertClient($scope.client)
      .then(
        function successCallback(response) {
          $scope.clientModel = "";

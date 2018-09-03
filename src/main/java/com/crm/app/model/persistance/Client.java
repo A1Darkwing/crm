@@ -24,6 +24,8 @@ public class Client {
   
   private double annnualRevenue;
   
+  private int numberOfEmployees;
+  
   private List<Phone> phones;
   
   private List<Email> emails;
@@ -39,6 +41,7 @@ public class Client {
     this.domain = "";
     this.industry = "";
     this.annnualRevenue = 0;
+    this.numberOfEmployees = 0;
     this.phones = new ArrayList<Phone>();
     this.emails = new ArrayList<Email>();
     this.address = new Address();
@@ -46,13 +49,14 @@ public class Client {
     this.sites = new ArrayList<Site>();
   }
   
-  public Client(String company, String domain, String industry, double annnualRevenue, List<Phone> phones,
-        List<Email> emails, Address address, List<Contact> contacts, List<Site> sites) {
+  public Client(String company, String domain, String industry, double annnualRevenue, int numberOfEmployees,
+		List<Phone> phones, List<Email> emails, Address address, List<Contact> contacts, List<Site> sites) {
     super();
     this.company = company;
     this.domain = domain;
     this.industry = industry;
     this.annnualRevenue = annnualRevenue;
+    this.numberOfEmployees = numberOfEmployees;
     this.phones = phones;
     this.emails = emails;
     this.address = address;
@@ -139,4 +143,13 @@ public class Client {
   public void setSites(List<Site> sites) {
     this.sites = sites;
   }
+
+	public int getNumberOfEmployees() {
+		return numberOfEmployees;
+	}
+	
+	public void setNumberOfEmployees(int numberOfEmployees) {
+		this.numberOfEmployees = numberOfEmployees;
+	}
+  
 }

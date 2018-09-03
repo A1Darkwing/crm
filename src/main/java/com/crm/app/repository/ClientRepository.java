@@ -106,7 +106,7 @@ public class ClientRepository extends BaseRepository {
     Site site2 = new Site("Etown Office", addresses, photoUrls);
     List<Site> sites = new ArrayList<>(Arrays.asList(site1, site2));
     
-    Client client = new Client("DXC Technology", "IT", "Software", 1200000000, phones, emails, address1, 
+    Client client = new Client("DXC Technology", "IT", "Software", 1200000000, 100, phones, emails, address1, 
             contacts, sites);
     
     ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
