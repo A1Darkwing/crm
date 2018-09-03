@@ -41,8 +41,6 @@ module.controller('ClientController',[
       });
     };
     
-<<<<<<< HEAD
-   
     //Add new Client Phone
     $scope.addNewPhone = function(sourceToPush) {
  	   var newPhone = {
@@ -89,19 +87,6 @@ module.controller('ClientController',[
 	       }
 	     );
     }
-=======
-    //Add new Client Phone
-    $scope.addNewPhone = function(sourceToPush) {
- 	   var newPhone = {
- 			   "type" : null,
- 			   "number" : null
- 	   }
- 	   sourceToPush.push(newPhone);
- 	  $timeout(function() {
-          $('.selectpicker').selectpicker('refresh');
-      });
-    };
->>>>>>> refs/remotes/origin/master
     
    $scope.createClient = function() {
 
