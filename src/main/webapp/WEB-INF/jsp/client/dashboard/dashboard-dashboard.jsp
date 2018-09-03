@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Street Address</label>
-                                        <input type="email" class="form-control" ng-model="client.address.street">
+                                        <input type="text" class="form-control" ng-model="client.address.street">
                                     </div>
                                 </div>
                             </div>
