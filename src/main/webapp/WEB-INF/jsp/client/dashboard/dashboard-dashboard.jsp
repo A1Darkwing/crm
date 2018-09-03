@@ -43,10 +43,10 @@
                                             <div class="form-group">
                                                 <select class="selectpicker" data-size="4" data-style="select-with-transition"
                                                         title="Email Type" tabindex="-98"
-                                                        ng-model="client.emails[0].type.type">
+                                                        ng-model="client.emails[0].type">
                                                     <option class="bs-title-option" value=""></option>
                                                     <option value="Main">Main</option>
-                                                    <option value="Other">Secondary</option>
+                                                    <option value="Secondary">Secondary</option>
                                                     <option value="Other">Other</option>
                                                 </select>
                                             </div>
@@ -69,7 +69,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <select class="selectpicker" data-size="4" data-style="select-with-transition"
-                                                        title="Phone Type" tabindex="-98" ng-model="client.phones[0].type.type">
+                                                        title="Phone Type" tabindex="-98" ng-model="client.phones[0].type">
                                                     <option class="bs-title-option" value=""></option>
                                                     <option value="Main">Main</option>
                                                     <option value="Main">Secondary</option>
@@ -217,7 +217,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98"
-                                                                                ng-model="client.contacts[0].phones[0].type.type">
+                                                                                ng-model="client.contacts[0].phones[0].type">
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
@@ -243,7 +243,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Email" tabindex="-98"
-                                                                                ng-model="client.contacts[0].emails[0].type.type">
+                                                                                ng-model="client.contacts[0].emails[0].type">
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
@@ -348,7 +348,7 @@
                                                                 <div class="row">
                                                                     <div class="col-md-4">
                                                                         <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98"
-                                                                            ng-model="client.contacts[1].phones[0].type.type">
+                                                                            ng-model="client.contacts[1].phones[0].type">
                                                                             <option class="bs-title-option" value=""></option>
                                                                             <option value="Main" disabled="" selected="">Main</option>
                                                                             <option value="Secondary">Secondary</option>
@@ -373,7 +373,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98"
-                                                                                ng-model="client.contacts[1].emails[0].type.type">
+                                                                                ng-model="client.contacts[1].emails[0].type">
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
