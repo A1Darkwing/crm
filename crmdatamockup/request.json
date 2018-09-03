@@ -1,0 +1,67 @@
+{
+  "id": null,
+  "company": "Minh",
+  "domain": "Souliee",
+  "industry": "Software",
+  "annnualRevenue": 0,
+  "numberOfEmployees": 0,
+  "phones": [
+    {
+      "number": null
+    }
+  ],
+  "emails": [
+    {
+      "type": null,
+      "email": ""
+    },
+    {
+      "type": null,
+      "email": ""
+    },
+    {
+      "type": null,
+      "email": ""
+    }
+  ],
+  "address": {
+    "id": null,
+    "street": "123",
+    "unitNumber": 123,
+    "city": "123",
+    "state": "123",
+    "country": "123",
+    "zipCode": "123"
+  },
+  "contacts": [
+    {
+      "title": "",
+      "firstName": "",
+      "lastName": ""
+    }
+  ],
+  "sites": [
+    {
+      "name": "",
+      "address": {
+        "street": "",
+        "unitNumber": null,
+        "city": "",
+        "state": "",
+        "country": "",
+        "zipCode": null
+      }
+    },
+    {
+      "name": "",
+      "address": {
+        "street": "",
+        "unitNumber": null,
+        "city": "",
+        "state": "",
+        "country": "",
+        "zipCode": null
+      }
+    }
+  ]
+}

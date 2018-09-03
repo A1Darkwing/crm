@@ -41,6 +41,54 @@ module.controller('ClientController',[
       });
     };
     
+   
+    //Add new Client Phone
+    $scope.addNewPhone = function(sourceToPush) {
+ 	   var newPhone = {
+ 			   "type" : null,
+ 			   "number" : null
+ 	   }
+ 	   sourceToPush.push(newPhone);
+ 	  $timeout(function() {
+          $('.selectpicker').selectpicker('refresh');
+      });
+    };
+    
+   //Add new Contact Custom Field
+    $scope.addNewCustomField = function(sourceToPush) {
+ 	   var newField = {
+ 			   "name" : null,
+ 			   "value" : null
+ 	   }
+ 	   sourceToPush.push(newField);
+    };
+    
+    //Add new Client Phone
+    $scope.addNewContact = function(sourceToPush) {
+ 	   var newContact = {
+ 			   "id" : null,
+ 			   "fistName" : null,
+ 			   "lastName" : null,
+ 			   "title" : null,
+			   "imageId" : null,
+			   "phones" : [],
+ 			   "emails" : [],
+ 			   "customFields" : []
+ 	   }
+ 	   sourceToPush.push(newContact);
+    };
+    
+     //Cancel Client Email
+    $scope.cancelClient = function() {
+    	clientService.initClient()
+        .then(
+	       function successCallback(response) {
+	    	   $scope.client = response;
+	       }, function errorCallback(response) {
+	       }
+	     );
+    }
+    
    $scope.createClient = function() {
 
      clientService.insertClient($scope.client)
