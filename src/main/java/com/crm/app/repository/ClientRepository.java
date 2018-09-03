@@ -3,11 +3,9 @@ package com.crm.app.repository;
 import com.crm.app.model.persistance.Address;
 import com.crm.app.model.persistance.Client;
 import com.crm.app.model.persistance.Contact;
-import com.crm.app.model.persistance.ContactTypeEnum;
 import com.crm.app.model.persistance.Email;
 import com.crm.app.model.persistance.Phone;
 import com.crm.app.model.persistance.Site;
-import com.crm.app.model.persistance.TitleTypeEnum;
 import com.crm.app.model.view.ClientRequest;
 import com.crm.core.BaseRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -83,20 +81,20 @@ public class ClientRepository extends BaseRepository {
 	}
     
   public static void main(String[] args) throws JsonProcessingException {
-    Phone p1 = new Phone(ContactTypeEnum.MAIN, "+028-3457-980");
-    Phone p2 = new Phone(ContactTypeEnum.SECONDARY, "+028-2563-880");
+    Phone p1 = new Phone("Main", "+028-3457-980");
+    Phone p2 = new Phone("Secondary", "+028-2563-880");
     List<Phone> phones = new ArrayList<>(Arrays.asList(p1, p2));
     
-    Email m1 = new Email(ContactTypeEnum.MAIN, "dxcvn@dxc.com");
-    Email m2 = new Email(ContactTypeEnum.SECONDARY, "excitingdxc@dxc.com");
+    Email m1 = new Email("Main", "dxcvn@dxc.com");
+    Email m2 = new Email("Secondary", "excitingdxc@dxc.com");
     List<Email> emails = new ArrayList<>(Arrays.asList(m1, m2));
     
     Address address1 = new Address("Cong Hoa", 364, "HCM", "HCM", "Vietnam", 70000);
     Address address2 = new Address("Nguyen Trai", 108, "HCM", "HCM", "Vietnam", 70000);
     
-    Contact ct1 = new Contact("Freg", "MC", TitleTypeEnum.TITLE1, "https://domain.com/photo_ID1", 
+    Contact ct1 = new Contact("Freg", "MC", "Title_1", "https://domain.com/photo_ID1", 
             phones, emails, Collections.emptyList());
-    Contact ct2 = new Contact("Michael ", "MC", TitleTypeEnum.TITLE2, "https://domain.com/photo_ID2", 
+    Contact ct2 = new Contact("Michael ", "MC", "Title_2", "https://domain.com/photo_ID2", 
             phones, emails, Collections.emptyList());
     List<Contact> contacts = new ArrayList<>(Arrays.asList(ct1, ct2));
     

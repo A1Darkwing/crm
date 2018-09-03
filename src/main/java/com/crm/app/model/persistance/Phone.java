@@ -10,7 +10,7 @@ public class Phone {
   
   @Id
   private String id;
-  private ContactTypeEnum type;
+  private String type;
   private String number;
   
   public Phone() {
@@ -18,7 +18,7 @@ public class Phone {
   }
   
   
-  public Phone(ContactTypeEnum type, String number) {
+  public Phone(String type, String number) {
     super();
     this.type = type;
     this.number = number;
@@ -30,10 +30,10 @@ public class Phone {
   public void setId(String id) {
     this.id = id;
   }
-  public ContactTypeEnum getType() {
+  public String getType() {
     return type;
   }
-  public void setType(ContactTypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
   public String getNumber() {

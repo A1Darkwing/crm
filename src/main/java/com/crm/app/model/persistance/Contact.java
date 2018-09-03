@@ -14,7 +14,7 @@ public class Contact {
   private String id;
   private String firstName;
   private String lastName;
-  private TitleTypeEnum title;
+  private String title;
   private String imageId;
   private List<Phone> phones;
   private List<Email> emails;
@@ -24,7 +24,7 @@ public class Contact {
     super();
   };
   
-  public Contact(String firstName, String lastName, TitleTypeEnum title, String imageId,
+  public Contact(String firstName, String lastName, String title, String imageId,
       List<Phone> phones, List<Email> emails, List<CustomField> customFields) {
     super();
     this.firstName = firstName;
@@ -54,10 +54,10 @@ public class Contact {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
-  public TitleTypeEnum getTitle() {
+  public String getTitle() {
     return title;
   }
-  public void setTitle(TitleTypeEnum title) {
+  public void setTitle(String title) {
     this.title = title;
   }
   public String getImageId() {
