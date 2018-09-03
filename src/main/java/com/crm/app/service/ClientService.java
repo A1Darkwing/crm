@@ -60,7 +60,7 @@ public class ClientService {
    * @param updateRequest ClientRequest
    * @return ClientResponse
    */
-  public ClientResponse updateCharityField(ClientRequest updateRequest) {
+  public ClientResponse updateClient(ClientRequest updateRequest) {
     if (updateRequest == null || StringUtils.isBlank(updateRequest.getId())) {
       return new ClientResponse();
     }

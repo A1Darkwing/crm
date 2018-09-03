@@ -39,20 +39,20 @@ public class ClientRestController {
   }
   
   @PostMapping("/insert")
-  public JsonResponse<Object> charityFieldInsert(@RequestBody ClientRequest createRequest) {
+  public JsonResponse<Object> clientInsert(@RequestBody ClientRequest createRequest) {
     String resultId = clientService.saveClient(createRequest);
     return JsonResponse.accept(resultId);
   }
   
   @PostMapping("/remove")
-  public JsonResponse<Object> charityFieldRemove(@RequestBody String clientId) {
+  public JsonResponse<Object> clientRemove(@RequestBody String clientId) {
     boolean result = clientService.removeClient(clientId);
     return JsonResponse.accept(result);
   }
   
   @PostMapping("/update")
-  public JsonResponse<Object> charityFieldUpdate(@RequestBody ClientRequest createRequest) {
-	  ClientResponse result = clientService.updateCharityField(createRequest);
+  public JsonResponse<Object> clientUpdate(@RequestBody ClientRequest createRequest) {
+	  ClientResponse result = clientService.updateClient(createRequest);
     return JsonResponse.accept(result);
   }
 }
