@@ -20,139 +20,135 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Company Name</label>
-                                        <input type="text" class="form-control" ng-model="client.company">
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Company Name</label>
+                                            <input type="text" class="form-control" ng-model="client.company">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Street Address</label>
-                                        <input type="text" class="form-control" ng-model="client.address.street">
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Company Domain Name</label>
+                                            <input type="text" class="form-control" ng-model="client.domain">
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Company Domain Name</label>
-                                        <input type="text" class="form-control" ng-model="client.domain">
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Company Industry</label>
+                                            <input type="text" class="form-control" ng-model="client.industry">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Unit Number</label>
-                                        <input type="number" class="form-control" ng-model="client.address.unitNumber">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Company Industry</label>
-                                        <input type="text" class="form-control" ng-model="client.industry">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">City</label>
-                                        <input type="text" class="form-control" ng-model="client.address.city">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">State</label>
-                                        <input type="text" class="form-control" ng-model="client.address.state">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" 
-                                        	title="Email Type" tabindex="-98"
-                                        	ng-model="client.emails[0].type.type">
-                                            <option class="bs-title-option" value=""></option>
-                                            <option value="Main">Main</option>
-                                            <option value="Other">Secondary</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Email</label>
-                                        <input type="email" class="form-control" ng-model="client.emails[0].email">
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="input-group-prepend">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <select class="selectpicker" data-size="4" data-style="select-with-transition"
+                                                        title="Email Type" tabindex="-98"
+                                                        ng-model="client.emails[0].type.type">
+                                                    <option class="bs-title-option" value=""></option>
+                                                    <option value="Main">Main</option>
+                                                    <option value="Other">Secondary</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Email</label>
+                                                <input type="email" class="form-control" ng-model="client.emails[0].email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="input-group-prepend">
                                         <span class="input-group-text">
                                           <i class="material-icons">add</i>
                                         </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <select class="selectpicker" data-size="4" data-style="select-with-transition"
+                                                        title="Phone Type" tabindex="-98" ng-model="client.phones[0].type.type">
+                                                    <option class="bs-title-option" value=""></option>
+                                                    <option value="Main">Main</option>
+                                                    <option value="Main">Secondary</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Phone</label>
+                                                <input type="number" class="form-control" ng-model="client.phones[0].number">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                  <i class="material-icons">add</i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Number of Employees</label>
+                                            <input type="number" class="form-control" ng-model="client.numberOfEmployees">
+                                        </div>
+                                    </div>
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Annual Revenue</label>
+                                            <input type="number" class="form-control" ng-model="client.annnualRevenue">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Country</label>
-                                        <input type="text" class="form-control" ng-model="client.address.country">
+
+                                <div class="col-md-6">
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Street Address</label>
+                                            <input type="text" class="form-control" ng-model="client.address.street">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Zip Code</label>
-                                        <input type="text" class="form-control" ng-model="client.address.zipCode">
+                                    <div class="row1">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Unit Number</label>
+                                            <input type="number" class="form-control" ng-model="client.address.unitNumber">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">City</label>
+                                                <input type="text" class="form-control" ng-model="client.address.city">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">State</label>
+                                                <input type="text" class="form-control" ng-model="client.address.state">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Country</label>
+                                                <input type="text" class="form-control" ng-model="client.address.country">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Zip Code</label>
+                                                <input type="text" class="form-control" ng-model="client.address.zipCode">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <select class="selectpicker" data-size="4" data-style="select-with-transition" 
-                                         title="Phone Type" tabindex="-98" ng-model="client.phones[0].type.type">
-                                            <option class="bs-title-option" value=""></option>
-                                            <option value="Main">Main</option>
-                                            <option value="Main">Secondary</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Phone</label>
-                                        <input type="number" class="form-control" ng-model="client.phones[0].number">
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                          <i class="material-icons">add</i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Number of Employees</label>
-                                        <input type="number" class="form-control" ng-model="client.numberOfEmployees">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Annual Revenue</label>
-                                        <input type="number" class="form-control" ng-model="client.annnualRevenue">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                </div>
-                            </div>
+
                             <br/>
                             <!--Start Tab -->
                             <div class="col-md-12">
@@ -251,7 +247,7 @@
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
-                                                                                <option value="Other">Other</option>
+                                                                                client.address.street              <option value="Other">Other</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -276,18 +272,23 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-11">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Add Custom Field</label>
+                                                                            <label class="bmd-label-floating">Custom Field Name</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[0].customFields[0].name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="bmd-label-floating">Custom Field Value</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[0].customFields[0].value">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-1">
                                                                         <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                      <i class="material-icons">add</i>
-                                                                    </span>
+                                                                            <span class="input-group-text">
+                                                                              <i class="material-icons">add</i>
+                                                                            </span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -401,10 +402,15 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-11">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Custom field 1</label>
+                                                                            <label class="bmd-label-floating">Custom field Name</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[0].name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="bmd-label-floating">Custom field Value</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[0].value">
                                                                         </div>
                                                                     </div>
@@ -419,10 +425,15 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-11">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Custom field 2</label>
+                                                                            <label class="bmd-label-floating">Custom Field Name</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[1].name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="bmd-label-floating">Custom Field Value</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[1].value">
                                                                         </div>
                                                                     </div>
@@ -439,10 +450,15 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-11">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
-                                                                            <label class="bmd-label-floating">Add Custom Field</label>
+                                                                            <label class="bmd-label-floating">Custom Field Name</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[2].name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="bmd-label-floating">Custom Field Value</label>
                                                                             <input type="text" class="form-control" ng-model="client.contacts[1].customFields[2].value">
                                                                         </div>
                                                                     </div>
