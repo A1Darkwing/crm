@@ -32,8 +32,8 @@ module.controller('ClientController',[
      clientService.insertClient($scope.client)
      .then(
        function successCallback(response) {
-         $scope.clientModel = "";
-         $scope.clientsSource.push(response.data.result);
+    	 showInfoMessage("New client has been created successfully!");
+         $scope.clientsSource.push($scope.client);
        }, function errorCallback(response) {
        }
      );
