@@ -63,14 +63,14 @@
                                        		Add New Email
                                        	</button>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" ng-repeat="item in client.phones track by $index">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <select class="selectpicker" data-size="4" data-style="select-with-transition"
-                                                        title="Phone Type" tabindex="-98" ng-model="client.phones[0].type">
+                                                <select ng-show="true" class="selectpicker active" data-size="4" data-style="select-with-transition"
+                                                        title="Phone Type" tabindex="-98" ng-model="item.type">
                                                     <option class="bs-title-option" value=""></option>
                                                     <option value="Main">Main</option>
-                                                    <option value="Main">Secondary</option>
+                                                    <option value="Secondary">Secondary</option>
                                                     <option value="Other">Other</option>
                                                 </select>
                                             </div>
@@ -78,7 +78,7 @@
                                         <div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Phone</label>
-                                                <input type="number" class="form-control" ng-model="client.phones[0].number">
+                                                <input type="number" class="form-control" ng-model="item.number">
                                             </div>
                                         </div>
                                     </div>

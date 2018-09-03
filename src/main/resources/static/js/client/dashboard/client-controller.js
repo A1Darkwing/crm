@@ -41,6 +41,18 @@ module.controller('ClientController',[
       });
     };
     
+    //Add new Client Phone
+    $scope.addNewPhone = function(sourceToPush) {
+ 	   var newPhone = {
+ 			   "type" : null,
+ 			   "number" : null
+ 	   }
+ 	   sourceToPush.push(newPhone);
+ 	  $timeout(function() {
+          $('.selectpicker').selectpicker('refresh');
+      });
+    };
+    
    $scope.createClient = function() {
 
      clientService.insertClient($scope.client)
