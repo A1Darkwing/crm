@@ -6,8 +6,10 @@ module.controller('ClientController',[
   'clientModel',
   '$translate',
   '$filter',
-  function($scope, $rootScope, clientService, clientsData, clientModel, $translate, $filter) {
+  '$timeout',
+  function($scope, $rootScope, clientService, clientsData, clientModel, $translate, $filter, $timeout) {
 	 $scope.clientsSource = [];
+	 $scope.emailTypes = ["", "Main", "Secondary", "Other"];
 	 //Define client Model
 	 $scope.client = clientModel;
 	 //load from response to $scope
@@ -26,7 +28,19 @@ module.controller('ClientController',[
     $scope.modify = function(index){
         $scope.editingData[index] = true;
     };
-
+    
+    //Add new Client Email
+    $scope.addNewEmail = function(sourceToPush) {
+ 	   var newEmail = {
+ 			   "type" : null,
+ 			   "email" : null
+ 	   }
+ 	   sourceToPush.push(newEmail);
+ 	  $timeout(function() {
+          $('.selectpicker').selectpicker('refresh');
+      });
+    };
+    
    $scope.createClient = function() {
 
      clientService.insertClient($scope.client)

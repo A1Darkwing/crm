@@ -38,35 +38,33 @@
                                             <input type="text" class="form-control" ng-model="client.industry">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <select class="selectpicker" data-size="4" data-style="select-with-transition"
+                                    <div class="row" ng-repeat="item in client.emails track by $index">
+                                        <div class="col-md-5">
+                                                <select ng-show="true" class="selectpicker active" data-size="4" 
+                                                	data-style="select-with-transition"
                                                         title="Email Type" tabindex="-98"
-                                                        ng-model="client.emails[0].type">
+                                                        ng-model="item.type">
                                                     <option class="bs-title-option" value=""></option>
                                                     <option value="Main">Main</option>
                                                     <option value="Secondary">Secondary</option>
                                                     <option value="Other">Other</option>
                                                 </select>
-                                            </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Email</label>
-                                                <input type="email" class="form-control" ng-model="client.emails[0].email">
+                                                <input type="email" class="form-control" ng-model="item.email">
                                             </div>
                                         </div>
-                                        <div class="col-md-1">
-                                            <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                          <i class="material-icons">add</i>
-                                        </span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                       	<button ng-click="addNewEmail(client.emails)" class="btn btn-rose btn-link btn-block">
+                                       		Add New Email
+                                       	</button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <select class="selectpicker" data-size="4" data-style="select-with-transition"
                                                         title="Phone Type" tabindex="-98" ng-model="client.phones[0].type">
@@ -83,13 +81,11 @@
                                                 <input type="number" class="form-control" ng-model="client.phones[0].number">
                                             </div>
                                         </div>
-                                        <div class="col-md-1">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                  <i class="material-icons">add</i>
-                                                </span>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    <div class="row">
+                                      	<button ng-click="addNewPhone(client.phones)" class="btn btn-rose btn-link btn-block">
+                                      		Add New Phone
+                                      	</button>
                                     </div>
                                     <div class="row1">
                                         <div class="form-group">
