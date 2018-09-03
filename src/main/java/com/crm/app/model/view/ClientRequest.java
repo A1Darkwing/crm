@@ -1,6 +1,6 @@
 package com.crm.app.model.view;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.crm.app.model.persistance.Address;
 import com.crm.app.model.persistance.Contact;
@@ -21,15 +21,15 @@ public class ClientRequest {
 	  
 	  private int numberOfEmployees;
 	  
-	  private List<Phone> phones;
+	  private Collection<Phone> phones;
 	  
-	  private List<Email> emails;
+	  private Collection<Email> emails;
 	  
 	  private Address address;
 	  
-	  private List<Contact> contacts;
+	  private Collection<Contact> contacts;
 	  
-	  private List<Site> sites;
+	  private Collection<Site> sites;
 	  
 	  public ClientRequest() {
 	    super();
@@ -55,11 +55,11 @@ public class ClientRequest {
 	    return annnualRevenue;
 	  }
 
-	  public List<Phone> getPhones() {
+	  public Collection<Phone> getPhones() {
 	    return phones;
 	  }
 
-	  public List<Email> getEmails() {
+	  public Collection<Email> getEmails() {
 	    return emails;
 	  }
 
@@ -67,11 +67,11 @@ public class ClientRequest {
 	    return address;
 	  }
 
-	  public List<Contact> getContacts() {
+	  public Collection<Contact> getContacts() {
 	    return contacts;
 	  }
 
-	  public List<Site> getSites() {
+	  public Collection<Site> getSites() {
 	    return sites;
 	  }
 

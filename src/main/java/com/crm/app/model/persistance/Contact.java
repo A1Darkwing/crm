@@ -1,6 +1,6 @@
 package com.crm.app.model.persistance;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.data.annotation.Id;
 
@@ -16,16 +16,16 @@ public class Contact {
   private String lastName;
   private String title;
   private String imageId;
-  private List<Phone> phones;
-  private List<Email> emails;
-  private List<CustomField> customFields;
+  private Collection<Phone> phones;
+  private Collection<Email> emails;
+  private Collection<CustomField> customFields;
   
   public Contact() { 
     super();
   };
   
   public Contact(String firstName, String lastName, String title, String imageId,
-      List<Phone> phones, List<Email> emails, List<CustomField> customFields) {
+      Collection<Phone> phones, Collection<Email> emails, Collection<CustomField> customFields) {
     super();
     this.firstName = firstName;
     this.lastName = lastName;
@@ -66,22 +66,22 @@ public class Contact {
   public void setImageId(String imageId) {
     this.imageId = imageId;
   }
-  public List<Phone> getPhones() {
+  public Collection<Phone> getPhones() {
     return phones;
   }
-  public void setPhones(List<Phone> phones) {
+  public void setPhones(Collection<Phone> phones) {
     this.phones = phones;
   }
-  public List<Email> getEmails() {
+  public Collection<Email> getEmails() {
     return emails;
   }
-  public void setEmails(List<Email> emails) {
+  public void setEmails(Collection<Email> emails) {
     this.emails = emails;
   }
-  public List<CustomField> getCustomFields() {
+  public Collection<CustomField> getCustomFields() {
     return customFields;
   }
-  public void setCustomFields(List<CustomField> customFields) {
+  public void setCustomFields(Collection<CustomField> customFields) {
     this.customFields = customFields;
   }
 }

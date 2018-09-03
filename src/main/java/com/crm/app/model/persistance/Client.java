@@ -1,6 +1,7 @@
 package com.crm.app.model.persistance;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -26,15 +27,15 @@ public class Client {
   
   private int numberOfEmployees;
   
-  private List<Phone> phones;
+  private Collection<Phone> phones;
   
-  private List<Email> emails;
+  private Collection<Email> emails;
   
   private Address address;
   
-  private List<Contact> contacts;
+  private Collection<Contact> contacts;
   
-  private List<Site> sites;
+  private Collection<Site> sites;
   
   public Client() {
     this.company = "";
@@ -50,7 +51,7 @@ public class Client {
   }
   
   public Client(String company, String domain, String industry, double annnualRevenue, int numberOfEmployees,
-		List<Phone> phones, List<Email> emails, Address address, List<Contact> contacts, List<Site> sites) {
+		  Collection<Phone> phones, Collection<Email> emails, Address address, Collection<Contact> contacts, Collection<Site> sites) {
     super();
     this.company = company;
     this.domain = domain;
@@ -104,7 +105,7 @@ public class Client {
     this.annnualRevenue = annnualRevenue;
   }
 
-  public List<Phone> getPhones() {
+  public Collection<Phone> getPhones() {
     return phones;
   }
 
@@ -112,7 +113,7 @@ public class Client {
     this.phones = phones;
   }
 
-  public List<Email> getEmails() {
+  public Collection<Email> getEmails() {
     return emails;
   }
 
@@ -128,7 +129,7 @@ public class Client {
     this.address = address;
   }
 
-  public List<Contact> getContacts() {
+  public Collection<Contact> getContacts() {
     return contacts;
   }
 
@@ -136,7 +137,7 @@ public class Client {
     this.contacts = contacts;
   }
 
-  public List<Site> getSites() {
+  public Collection<Site> getSites() {
     return sites;
   }
 

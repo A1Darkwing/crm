@@ -1,6 +1,6 @@
 package com.crm.app.model.persistance;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.data.annotation.Id;
 
@@ -17,7 +17,7 @@ public class Site {
   
   private Address address;
   
-  private List<String> imageIds;
+  private Collection<String> imageIds;
 
   
   public Site() {
@@ -25,7 +25,7 @@ public class Site {
   }
   
   
-  public Site(String name, Address address, List<String> imageIds) {
+  public Site(String name, Address address, Collection<String> imageIds) {
     super();
     this.name = name;
     this.address = address;
@@ -56,11 +56,11 @@ public class Site {
     this.address = address;
   }
 
-  public List<String> getImageIds() {
+  public Collection<String> getImageIds() {
     return imageIds;
   }
 
-  public void setImageIds(List<String> imageIds) {
+  public void setImageIds(Collection<String> imageIds) {
     this.imageIds = imageIds;
   }
 }

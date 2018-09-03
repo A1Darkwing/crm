@@ -217,7 +217,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main" tabindex="-98"
-                                                                                ng-model="client.contacts[0].phones[0].type">
+                                                                                >
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
@@ -228,7 +228,7 @@
                                                                     <div class="col-md-7">
                                                                         <div class="form-group">
                                                                             <label class="bmd-label-floating">Phone</label>
-                                                                            <input type="text" class="form-control" ng-model="client.contacts[0].phones[0].number">
+                                                                            <input type="text" class="form-control" >
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-1">
@@ -243,18 +243,18 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <select class="selectpicker" data-size="4" data-style="select-with-transition" title="Main Email" tabindex="-98"
-                                                                                ng-model="client.contacts[0].emails[0].type">
+                                                                                >
                                                                                 <option class="bs-title-option" value=""></option>
                                                                                 <option value="Main" disabled="" selected="">Main</option>
                                                                                 <option value="Secondary">Secondary</option>
-                                                                                client.address.street              <option value="Other">Other</option>
+                                                                                <option value="Other">Other</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-7">
                                                                         <div class="form-group">
                                                                             <label class="bmd-label-floating">Email</label>
-                                                                            <input type="text" class="form-control" ng-model="client.contacts[0].email[0].email">
+                                                                            <input type="text" class="form-control" >
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-1">
@@ -275,13 +275,13 @@
                                                                     <div class="col-md-5">
                                                                         <div class="form-group">
                                                                             <label class="bmd-label-floating">Custom Field Name</label>
-                                                                            <input type="text" class="form-control" ng-model="client.contacts[0].customFields[0].name">
+                                                                            <input type="text" class="form-control" >
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label class="bmd-label-floating">Custom Field Value</label>
-                                                                            <input type="text" class="form-control" ng-model="client.contacts[0].customFields[0].value">
+                                                                            <input type="text" class="form-control">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-1">
@@ -306,7 +306,7 @@
                                                     </div>
                                                 </div>
                                                 <hr/>
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="col-md-2">
                                                         <div class="img-container">
                                                             <img src="/images/common/placeholder.jpg" alt="..." class="ng-isolate-scope" style="">
@@ -398,7 +398,7 @@
                                                             </div>
                                                         </div>
 
-                                                        <!--start custom fields-->
+                                                        start custom fields
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="row">
@@ -483,7 +483,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <hr/>
+                                                <hr/> -->
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <button class="btn btn-rose btn-link btn-block">
