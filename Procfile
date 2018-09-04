@@ -1,1 +1,1 @@
-java $JAVA_OPTS -jar target/crm-1.0.0.war --server.port=$PORT $JAR_OPTS
+web: java -Dserver.port=$PORT $JAVA_OPTS -war target/*.war
