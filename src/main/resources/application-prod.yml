@@ -16,11 +16,11 @@ server:
 #-- Application Configuration
 app:
   image:
-    path: C:/images
+    path: /home/mr_tranlethanh/crm/images
     size: 8000000
     maxWidth: 1200
     maxHeight: 1200
-    location: C:/image/
+    location: /home/mr_tranlethanh/crm
 
-  url: souliee.com
+  url: crm-client-215407.appspot.com
 
