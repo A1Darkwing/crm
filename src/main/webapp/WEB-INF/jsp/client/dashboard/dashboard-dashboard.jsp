@@ -178,7 +178,7 @@
 											                <div class="fileinput fileinput-new text-center"
 											                  data-provides="fileinput">
 											                  <div class="fileinput-new thumbnail">
-											                    <img class="image">
+											                    <img class="image" ng-src="{{imageUrl.client}}{{item.imageId}}">
 											                  </div>
 											                  <div
 											                    class="fileinput-preview fileinput-exists thumbnail"></div>
@@ -512,23 +512,17 @@
                                     <tr ng-repeat="item in clientsSource track by $index">
                                         <td class="text-center">{{$index}}</td>
                                         <td>
-                                        	<div ng-hide="editingData[$index]">{{item.client.company}}</div>
+                                        	<div>{{item.client.company}}</div>
                                         </td>
                                         <td>
-                                        	<div ng-hide="editingData[$index]">{{item.client.domain}}</div>
+                                        	<div>{{item.client.domain}}</div>
                                         </td>
                                         <td>
-                                        	<div ng-hide="editingData[$index]">{{item.client.industry}}</div>
+                                        	<div>{{item.client.industry}}</div>
                                         </td>
                                         <td class="td-actions text-right">
-                                            <button  type="button" rel="tooltip" class="btn btn-success btn-round"
-                                            	ng-hide="editingData[$index]" ng-click="modify($index)">
-                                            	<span class="input-group-text">
-                                                  <i class="material-icons">build</i>
-                                                </span>
-                                            </button>
                                				<button  type="button" rel="tooltip" class="btn btn-success btn-round"
-                               					ng-show="editingData[$index]" ng-click="updateClient(item, $index)">
+                               					ng-click="updateClient(item.client, $index)">
                                					<span class="input-group-text">
                                                   <i class="material-icons">done</i>
                                                 </span>

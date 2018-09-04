@@ -38,12 +38,12 @@ public class ClientService {
   
   @PostConstruct
   public void init() {
-    ImageProcessorBuilder imgClientBuilder = new ImageProcessorBuilder(NumberUtils.toInt(appProperties.getAppPropertyValue("image.size")),
+    ImageProcessorBuilder imgClientBuilder = new ImageProcessorBuilder(NumberUtils.toInt("8000000"),
             AppConstant.ALLOW_TYPE_EXT, AppConstant.ALLOW_TYPE_MIME);
     // Normal upload process.
-    imgClientBuilder = imgClientBuilder.addImageMeta(appProperties.getAppPropertyValue("image.path"), false,
-            NumberUtils.toInt(appProperties.getAppPropertyValue("image.maxWidth")),
-            NumberUtils.toInt(appProperties.getAppPropertyValue("image.maxHeight")));
+    imgClientBuilder = imgClientBuilder.addImageMeta("C:/images/", false,
+            NumberUtils.toInt("1200"),
+            NumberUtils.toInt("1200"));
     imgClientProcessor = imgClientBuilder.build();
   }
 
@@ -92,7 +92,6 @@ public class ClientService {
    * @return boolean
    */
   public boolean removeClient(String clientId) {
-
     boolean result =  clientRepository.removeClient(clientId);
     return result;
   }

@@ -18,17 +18,6 @@ module.controller('ClientController',[
 	 }
 	 
 	 
-	 $scope.editingData = {};
-	    
-    for (var i = 0, length = $scope.clientsSource.length; i < length; i++) {
-      $scope.editingData[i] = false;
-    }
-
-
-    $scope.modify = function(index){
-        $scope.editingData[index] = true;
-    };
-    
     //Add new Client Email
     $scope.addNewEmail = function(sourceToPush) {
  	   var newEmail = {
@@ -94,21 +83,26 @@ module.controller('ClientController',[
      .then(
        function successCallback(response) {
     	 showInfoMessage("New client has been created successfully!");
-         $scope.clientsSource.push($scope.client);
+    	 $scope.client.id = response.result;
+    	 var newClient = {
+    			 "id" : response.result,
+    			 "client" : $scope.client
+    	 }
+         $scope.clientsSource.push(newClient);
        }, function errorCallback(response) {
        }
      );
    }
    
    $scope.removeClient = function(client) {
-     clientService.removeClient(charityField.id)
+     clientService.removeClient(client.id)
      .then(
        function successCallback(response) {
       	 if (response.data.result) {
-	      	 $scope.charityFieldsSource = $filter('filter')($scope.charityFieldsSource, {id: ('!' + charityField.id)});
-	      	 showInfoMessage($translate.instant("charityField.removed.success", {"fieldName":charityField.fieldName}));
+	      	 $scope.clientsSource = $filter('filter')($scope.clientsSource, {id: ('!' + client.id)});
+	      	 showInfoMessage("An Client has been removed!");
       	 } else {
-      		showErrorMessageWithTitle("ERROR", $translate.instant("charityField.removed.failed"));
+      		showErrorMessageWithTitle("ERROR", "Can't Remove Due To Error!!!");
       	 }
        }, function errorCallback(response) {
        }
@@ -116,18 +110,6 @@ module.controller('ClientController',[
    }
    
    $scope.updateClient = function(client, index) {
-     clientService.updateClient(client)
-     .then(
-       function successCallback(response) {
-      	 if (response.data.result.success) {
-	      	 showInfoMessage($translate.instant("charityField.updated.success", {"fieldName":charityField.fieldName}));
-      	 } else {
-      		showErrorMessageWithTitle("ERROR", $translate.instant("charityField.updated.failed"));
-      		 charityField.fieldName = response.data.result.fieldName;
-      	 }
-      	 $scope.editingData[index] = false;
-       }, function errorCallback(response) {
-       }
-     );
+     $scope.client = client;
    }
 } ]);
