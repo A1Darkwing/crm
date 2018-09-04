@@ -79,7 +79,7 @@
                                         <div class="col-md-7">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Phone</label>
-                                                <input type="number" class="form-control" ng-model="item.number">
+                                                <input type="text" class="form-control" ng-model="item.number">
                                             </div>
                                         </div>
                                     </div>
@@ -290,7 +290,7 @@
 							                                        <div class="col-md-7">
 							                                            <div class="form-group">
 							                                                <label class="bmd-label-floating">Phone</label>
-							                                                <input type="number" class="form-control" ng-model="contactPhonenumber">
+							                                                <input type="text" class="form-control" ng-model="contactPhone.number">
 							                                            </div>
 							                                        </div>
 							                                    </div>
