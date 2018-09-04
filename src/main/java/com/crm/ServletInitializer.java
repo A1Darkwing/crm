@@ -17,10 +17,10 @@ public class ServletInitializer extends SpringBootServletInitializer {
   }
 
   @Bean
-  public ServletRegistrationBean organizationAboutServletRegistrationBean() {
+  public ServletRegistrationBean clientImageServletRegistrationBean() {
     ServletRegistrationBean imageServlet = new ServletRegistrationBean(new ClientImageServlet(), 
-        "/images/organization/about/*");
-    imageServlet.setName("organizationAboutImage");
+        "/images/*");
+    imageServlet.setName("clientImage");
     return imageServlet;
   }
   

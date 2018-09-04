@@ -90,7 +90,7 @@ module.controller('ClientController',[
     
    $scope.createClient = function() {
 
-     clientService.insertClient($scope.client)
+     clientService.saveClient($scope.client)
      .then(
        function successCallback(response) {
     	 showInfoMessage("New client has been created successfully!");

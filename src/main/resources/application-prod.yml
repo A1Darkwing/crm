@@ -21,8 +21,6 @@ app:
     maxWidth: 1200
     maxHeight: 1200
     location: C:/image/
-    location.thumb: C:/image/thumb/
-    location.thumb.small: C:/image/sthumb/
 
   url: souliee.com
 

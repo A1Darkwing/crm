@@ -2,11 +2,14 @@ package com.crm.app.controller.rest;
 
 
 
+import java.io.IOException;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.crm.app.model.persistance.Client;
 import com.crm.app.model.view.ClientRequest;
@@ -14,6 +17,7 @@ import com.crm.app.model.view.ClientResponse;
 import com.crm.app.model.view.GetClientsResponse;
 import com.crm.app.service.ClientService;
 import com.crm.core.model.JsonResponse;
+import com.crm.core.processor.ImageProcessor.ImageProcessorException;
 
 @RestController
 @RequestMapping(value = "/client/data/")
@@ -41,6 +45,13 @@ public class ClientRestController {
   @PostMapping("/insert")
   public JsonResponse<Object> clientInsert(@RequestBody ClientRequest createRequest) {
     String resultId = clientService.saveClient(createRequest);
+    return JsonResponse.accept(resultId);
+  }
+  
+  @PostMapping("/save")
+  public JsonResponse<Object> clientInsert(@RequestPart(value = "files", required = false) MultipartFile[] files, 
+      @RequestPart("attr") ClientRequest createRequest) throws IOException, ImageProcessorException {
+    String resultId = clientService.saveClientAndImage(createRequest, files);
     return JsonResponse.accept(resultId);
   }
   

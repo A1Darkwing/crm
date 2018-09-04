@@ -15,13 +15,11 @@ server:
 #-- Application Configuration
 app:
   image:
-    path: C:/images
+    path: C:/images/
     size: 8000000
     maxWidth: 1200
     maxHeight: 1200
     location: C:/image/
-    location.thumb: C:/image/thumb/
-    location.thumb.small: C:/image/sthumb/
 
       
   #Application    

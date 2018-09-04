@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                <img class="image" ng-src="{{imageUrl.client}}5b8e38f046b8884c302213de.jpg"/>
                     <form>
                         <div class="card-header card-header-icon card-header-rose">
                             <div class="card-icon">
@@ -178,7 +179,7 @@
 											                <div class="fileinput fileinput-new text-center"
 											                  data-provides="fileinput">
 											                  <div class="fileinput-new thumbnail">
-											                    <img class="image" ng-src="{{imageUrl.article.cover}}{{item.imageId}}">
+											                    <img class="image" ng-src="{{imageUrl.client}}{{item.imageId}}">
 											                  </div>
 											                  <div
 											                    class="fileinput-preview fileinput-exists thumbnail"></div>
@@ -188,7 +189,7 @@
 											                      	<i class="fa fa-upload"></i> New Img
 											                      </span> <span
 											                      class="fileinput-exists">Change</span> <input
-											                      type="file" name="file" id="post-cover" />
+											                      type="file" name="file" id="contact-image-{{$index}}" />
 											                    </span> <a href="#pablo"
 											                      class="btn btn-danger btn-round fileinput-exists"
 											                      data-dismiss="fileinput"><i

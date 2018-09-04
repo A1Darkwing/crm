@@ -27,14 +27,7 @@ commonModule.run(function(Keepalive){
 commonModule.run(function ($q, $rootScope, $translate) {
   // Define App Constant
   $rootScope.imageUrl = {
-
-    organization: {
-      avatar: {
-        full: '/images/organization/avatar/',
-        thumb: '/images/organization/avatar/thumb/',
-        smallThumb: '/images/organization/avatar/sthumb/'
-      }
-    }
+    client: '/images/',
   };
 
   // Define global variable

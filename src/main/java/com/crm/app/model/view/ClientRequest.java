@@ -75,8 +75,8 @@ public class ClientRequest {
 	    return sites;
 	  }
 
-	public int getNumberOfEmployees() {
-		return numberOfEmployees;
-	}
-	  
+  	public int getNumberOfEmployees() {
+  		return numberOfEmployees;
+  	}
+  	
 }
