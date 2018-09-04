@@ -43,10 +43,21 @@ public class Client {
     this.industry = "";
     this.annnualRevenue = 0;
     this.numberOfEmployees = 0;
-    this.phones = new ArrayList<Phone>();
-    this.emails = new ArrayList<Email>();
+    
+    Collection<Phone> phonesList = new ArrayList<Phone>(); 
+    phonesList.add(new Phone());
+    this.phones = phonesList;
+    
+    Collection<Email> emailList = new ArrayList<Email>(); 
+    emailList.add(new Email());
+    this.emails = emailList;
+    
     this.address = new Address();
-    this.contacts = new ArrayList<Contact>();
+    
+    Collection<Contact> contactList = new ArrayList<Contact>(); 
+    contactList.add(new Contact());
+    this.contacts = contactList;
+    
     this.sites = new ArrayList<Site>();
   }
   

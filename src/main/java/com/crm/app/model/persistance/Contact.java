@@ -1,5 +1,6 @@
 package com.crm.app.model.persistance;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.data.annotation.Id;
@@ -22,6 +23,17 @@ public class Contact {
   
   public Contact() { 
     super();
+    Collection<Phone> phonesList = new ArrayList<Phone>(); 
+    phonesList.add(new Phone());
+    phones = phonesList;
+    
+    Collection<Email> emailList = new ArrayList<Email>(); 
+    emailList.add(new Email());
+    emails = emailList;
+    
+    Collection<CustomField> customFieldList = new ArrayList<CustomField>(); 
+    customFieldList.add(new CustomField());
+    customFields = customFieldList;
   };
   
   public Contact(String firstName, String lastName, String title, String imageId,

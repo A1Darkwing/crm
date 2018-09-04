@@ -59,11 +59,26 @@ module.controller('ClientController',[
  			   "lastName" : null,
  			   "title" : null,
 			   "imageId" : null,
-			   "phones" : [],
- 			   "emails" : [],
- 			   "customFields" : []
+			   "phones" : [{
+				      "id" : null,
+				      "type" : "Main",
+				      "number" : ""
+				    }],
+ 			   "emails" : [{
+ 			      "id" : null,
+ 			      "type" : "Main",
+ 			      "email" : ""
+ 			    }],
+ 			   "customFields" : [{
+ 			      "id" : null,
+ 			      "name" : "",
+ 			      "value" : ""
+ 			    }]
  	   }
  	   sourceToPush.push(newContact);
+ 	  $timeout(function() {
+          $('.selectpicker').selectpicker('refresh');
+      });
     };
     
      //Cancel Client Email
