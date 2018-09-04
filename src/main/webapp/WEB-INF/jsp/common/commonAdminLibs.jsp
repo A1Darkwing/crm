@@ -106,7 +106,6 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <script src="/js/directive/select-directive.js"></script>
 <script src="/js/directive/combo-datetime-picker-directive.js"></script>
 <script src="/js/directive/tags-input-directive.js"></script>
-<script src="/js/directive/image-directive.js"></script>
 <script src="/js/directive/upload-simple-directive.js"></script>
 <script src="/js/directive/carousel-directive.js"></script>
 <script src="/js/common/module/angular-location-update.js"></script>

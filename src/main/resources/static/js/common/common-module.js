@@ -126,7 +126,6 @@ commonModule.provider('validationService', function () {
 
 commonModule.directive('csInput', ['$translate', '$sce', customInputDirective]);
 commonModule.directive('csSelect', ['$translate' , '$timeout', selectDirective]);
-commonModule.directive('img', imageDirective);
 commonModule.directive('csComboDatetimePicker', customComboDatetimePickerDirective);
 commonModule.directive('csTagsInput', customTagsInputDirective);
 commonModule.directive('csUploadSimpleModel', ['$parse', customUploadSimpleDirective]);

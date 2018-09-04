@@ -1,5 +1,7 @@
 #-- Spring Boot Configuration
 spring:
+  profiles:
+    active: "dev"
   data:
     mongodb:
       host: localhost

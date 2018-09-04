@@ -3,7 +3,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                <img class="image" ng-src="{{imageUrl.client}}5b8e38f046b8884c302213de.jpg"/>
                     <form>
                         <div class="card-header card-header-icon card-header-rose">
                             <div class="card-icon">
@@ -179,7 +178,7 @@
 											                <div class="fileinput fileinput-new text-center"
 											                  data-provides="fileinput">
 											                  <div class="fileinput-new thumbnail">
-											                    <img class="image" ng-src="{{imageUrl.client}}{{item.imageId}}">
+											                    <img class="image">
 											                  </div>
 											                  <div
 											                    class="fileinput-preview fileinput-exists thumbnail"></div>

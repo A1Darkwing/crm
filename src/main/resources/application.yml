@@ -1,7 +1,5 @@
 #-- Default Spring Boot Configuration
 spring:
-  profiles:
-    active: "dev"
   mvc:
     view:
       prefix: /WEB-INF/jsp/
