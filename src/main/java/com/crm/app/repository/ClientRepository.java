@@ -98,9 +98,8 @@ public class ClientRepository extends BaseRepository {
             phones, emails, Collections.emptyList());
     List<Contact> contacts = new ArrayList<>(Arrays.asList(ct1, ct2));
     
-    List<String> photoUrls = new ArrayList<>(Arrays.asList("https://domain.com/photo_ID1", "https://domain.com/photo_ID2"));
-    Site site1 = new Site("Nguyen Trai Office", address1, photoUrls);
-    Site site2 = new Site("Etown Office", address2, photoUrls);
+    Site site1 = new Site("Nguyen Trai Office", address1, "https://domain.com/photo_ID1");
+    Site site2 = new Site("Etown Office", address2, "https://domain.com/photo_ID1");
     List<Site> sites = new ArrayList<>(Arrays.asList(site1, site2));
     
     Client client = new Client("DXC Technology", "IT", "Software", 1200000000, 100, phones, emails, address1, 
