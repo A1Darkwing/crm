@@ -39,6 +39,7 @@
     "pnotify": "^3.2.1"
   },
   "engines": {
+    "node": "8.9.4",
     "yarn": ">= 1.0.0"
   },
   "resolutions": {
