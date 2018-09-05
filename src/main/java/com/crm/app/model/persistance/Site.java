@@ -17,19 +17,20 @@ public class Site {
   
   private Address address;
   
-  private Collection<String> imageIds;
+  private String imageId;
 
+  private Integer imageIndex;
   
   public Site() {
     super();
   }
   
   
-  public Site(String name, Address address, Collection<String> imageIds) {
+  public Site(String name, Address address, String imageId) {
     super();
     this.name = name;
     this.address = address;
-    this.imageIds = imageIds;
+    this.imageId = imageId;
   }
 
   public String getId() {
@@ -56,11 +57,15 @@ public class Site {
     this.address = address;
   }
 
-  public Collection<String> getImageIds() {
-    return imageIds;
+  public String getImageId() {
+    return imageId;
   }
 
-  public void setImageIds(Collection<String> imageIds) {
-    this.imageIds = imageIds;
+  public void setImageId(String imageId) {
+    this.imageId = imageId;
+  }
+
+  public Integer getImageIndex() {
+    return imageIndex;
   }
 }

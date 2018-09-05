@@ -53,11 +53,32 @@ module.service("clientService", [ '$resource', '$q', '$rootScope',
 		        deferred.resolve(JSON.parse(xhr.responseText));
 		      };
 		      formData = new FormData();
+		      
+		      var imgIndex = 0;
 		      if (client.contacts && client.contacts.length > 0) {
 		        for (var i = 0; i < client.contacts.length; i++) {
-		            formData.append('files', $("#contact-image-" + i)[0].files[0]);
+		            var file = $("#contact-image-" + i)[0].files[0];
+		            if (file) {
+		              formData.append('files', file);
+		              client.contacts[i].imageIndex = i;
+		              imgIndex ++;
+		            } else {
+		              client.contacts[i].imageIndex = null;
+		            }
 		        }
 		      }
+		      if (client.sites && client.sites.length > 0) {
+            for (var i = 0; i < client.sites.length; i++) {
+                var file = $("#site-image-" + i)[0].files[0];
+                if (file) {
+                  formData.append('files', file);
+                  client.sites[i].imageIndex = imgIndex;
+                  imgIndex ++ ;
+                } else {
+                  client.sites[i].imageIndex = null;
+                }
+            }
+          }
 		      formData.append('attr', JSON.stringify(client));
 		      xhr.setRequestHeader('X-CSRF-TOKEN', csrf_token);
 		      xhr.send(formData);

@@ -51,8 +51,8 @@ public class ClientRestController {
   @PostMapping("/save")
   public JsonResponse<Object> clientInsert(@RequestPart(value = "files", required = false) MultipartFile[] files, 
       @RequestPart("attr") ClientRequest createRequest) throws IOException, ImageProcessorException {
-    String resultId = clientService.saveClientAndImage(createRequest, files);
-    return JsonResponse.accept(resultId);
+    ClientResponse result = clientService.saveClientAndImage(createRequest, files);
+    return JsonResponse.accept(result);
   }
   
   @PostMapping("/remove")

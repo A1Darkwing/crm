@@ -58,7 +58,9 @@ public class Client {
     contactList.add(new Contact());
     this.contacts = contactList;
     
-    this.sites = new ArrayList<Site>();
+    Collection<Site> siteList = new ArrayList<Site>(); 
+    siteList.add(new Site());
+    this.sites = siteList;
   }
   
   public Client(String company, String domain, String industry, double annnualRevenue, int numberOfEmployees,

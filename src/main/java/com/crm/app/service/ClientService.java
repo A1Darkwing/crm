@@ -3,6 +3,7 @@ package com.crm.app.service;
 import com.crm.ApplicationProperties;
 import com.crm.app.model.persistance.Client;
 import com.crm.app.model.persistance.Contact;
+import com.crm.app.model.persistance.Site;
 import com.crm.app.model.view.ClientRequest;
 import com.crm.app.model.view.ClientResponse;
 import com.crm.app.model.view.GetClientsResponse;
@@ -70,19 +71,33 @@ public class ClientService {
 	  return clientRepository.insertClient(client);
   }
   
-  public String saveClientAndImage(ClientRequest request, MultipartFile[] files) throws IOException, ImageProcessorException {
-    int imageIndex = 0;
-    for (Contact contact : request.getContacts()) {
-      String imageId = ApplicationUtils.generateImageName();
-      MultipartFile file = files[imageIndex];
-      imgClientProcessor.upload(file, imageId);
-      contact.setImageId(imageId);
+  public ClientResponse saveClientAndImage(ClientRequest request, MultipartFile[] files) throws IOException, ImageProcessorException {
+    if (files != null ) {
+      for (Contact contact : request.getContacts()) {
+        if (contact.getImageIndex() != null && files.length >= contact.getImageIndex()) {
+          String imageId = ApplicationUtils.generateImageName();
+          MultipartFile file = files[contact.getImageIndex()];
+          imgClientProcessor.upload(file, imageId);
+          contact.setImageId(imageId);
+        }
+      }
+      
+      for (Site site : request.getSites()) {
+        if (site.getImageIndex() != null && files.length >= site.getImageIndex()) {
+          String imageId = ApplicationUtils.generateImageName();
+          MultipartFile file = files[site.getImageIndex()];
+          imgClientProcessor.upload(file, imageId);
+          site.setImageId(imageId);
+        }
+      }
     }
     Client client = new Client(request.getCompany(), request.getDomain(), 
         request.getIndustry(), request.getAnnnualRevenue(), 
         request.getNumberOfEmployees() ,request.getPhones(), request.getEmails(), request.getAddress(), 
             request.getContacts(), request.getSites());
-    return clientRepository.insertClient(client);
+    String clientId =  clientRepository.insertClient(client);
+    client.setId(clientId);
+    return new ClientResponse(clientId, client);
   }
   
   /**

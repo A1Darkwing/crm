@@ -153,24 +153,27 @@
                                     <div class="card-body2 ">
                                         <ul class="nav nav-pills nav-pills-rose nav-pills-icons justify-content-center" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">
+                                                <a class="nav-link" ng-class="{'active': tabs[0]}"
+                                                	data-toggle="tab" ng-click="changeTab(0)" role="tablist">
                                                     Contact
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">
+                                                <a class="nav-link" ng-class="{'active': tabs[1]}"
+                                                	data-toggle="tab" ng-click="changeTab(1)" role="tablist">
                                                     Site
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#link3" role="tablist">
+                                                <a class="nav-link" ng-class="{'active': tabs[2]}"
+                                                	data-toggle="tab" ng-click="changeTab(2)" role="tablist">
                                                     Asset
                                                 </a>
                                             </li>
                                         </ul>
                                         <div class="tab-content tab-space">
                                             <!-- The div tab for Contacts section -->
-                                            <div class="tab-pane active show" id="link1">
+                                            <div class="tab-pane" id="link1" ng-class="{'active show': tabs[0]}">
                                                 <div class="row" ng-repeat="item in client.contacts track by $index">
                                                     <div class="col-md-2">
                                                     	<div class="form-group">
@@ -178,7 +181,7 @@
 											                <div class="fileinput fileinput-new text-center"
 											                  data-provides="fileinput">
 											                  <div class="fileinput-new thumbnail">
-											                    <img class="image" ng-src="{{imageUrl.client}}{{item.imageId}}">
+											                    <img ng-show="item.imageId" class="image" ng-src="{{imageUrl.client}}{{item.imageId}}">
 											                  </div>
 											                  <div
 											                    class="fileinput-preview fileinput-exists thumbnail"></div>
@@ -328,26 +331,26 @@
                                                 </div>
                                             </div>
                                             <!-- The div tab for Site section -->
-                                            <div class="tab-pane" id="link2">
-                                                <div class="row">
+                                            <div class="tab-pane" id="link2" ng-class="{'active show': tabs[1]}">
+                                                <div class="row" ng-repeat="site in client.sites track by $index">
                                                     <div class="col-md-9">
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">Site</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[0].name">
+                                                                    <input type="text" class="form-control" ng-model="site.name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">Street</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[0].address.street">
+                                                                    <input type="text" class="form-control" ng-model="site.address.street">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">Unit Number</label>
-                                                                    <input type="number" class="form-control" ng-model="client.sites[0].address.unitNumber">
+                                                                    <input type="number" class="form-control" ng-model="site.address.unitNumber">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -355,37 +358,53 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">City</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[0].address.city">
+                                                                    <input type="text" class="form-control" ng-model="site.address.city">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">State</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[0].address.state">
+                                                                    <input type="text" class="form-control" ng-model="site.address.state">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">Country</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[0].address.country">
+                                                                    <input type="text" class="form-control" ng-model="site.address.country">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <div class="form-group">
                                                                     <label class="bmd-label-floating">Zip Code</label>
-                                                                    <input type="number" class="form-control" ng-model="client.sites[0].address.zipCode">
+                                                                    <input type="number" class="form-control" ng-model="site.address.zipCode">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <div class="img-container" style="width:60%;">
-                                                            <img src="/images/common/placeholder.jpg" alt="..." class="ng-isolate-scope" style="">
-                                                        </div>
-                                                        <button class="btn btn-link">
-                                                            <i class="fa fa-upload"></i> Add Photo
-                                                            <div class="ripple-container"></div>
-                                                        </button>
+                                                       	  <div class="form-group">
+											                <label class="label-on-left">Image:</label><br />
+											                <div class="fileinput fileinput-new text-center"
+											                  data-provides="fileinput">
+											                  <div class="fileinput-new thumbnail">
+											                    <img ng-show="site.imageId" class="image" ng-src="{{imageUrl.client}}{{site.imageId}}">
+											                  </div>
+											                  <div
+											                    class="fileinput-preview fileinput-exists thumbnail"></div>
+											                  <div>
+											                    <span class="btn btn-rose btn-round btn-file">
+											                      <span class="fileinput-new">
+											                      	<i class="fa fa-upload"></i> New Img
+											                      </span> <span
+											                      class="fileinput-exists">Change</span> <input
+											                      type="file" name="file" id="site-image-{{$index}}" />
+											                    </span> <a href="#pablo"
+											                      class="btn btn-danger btn-round fileinput-exists"
+											                      data-dismiss="fileinput"><i
+											                      class="fa fa-times"></i> Remove</a>
+											                  </div>
+											                </div>
+											              </div>
                                                     </div>
                                                     <div class="col-md-1">
                                                         <div class="td-actions">
@@ -394,87 +413,21 @@
                                                                 <div class="ripple-container"></div></button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <hr/>
-                                                <div class="row">
-                                                    <div class="col-md-9">
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">Site</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[1].name">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">Street</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[1].address.street">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">Unit Number</label>
-                                                                    <input type="number" class="form-control" ng-model="client.sites[1].address.unitNumber">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">City</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[1].address.city">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">State</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[1].address.state">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">Country</label>
-                                                                    <input type="text" class="form-control" ng-model="client.sites[1].address.country">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                    <label class="bmd-label-floating">Zip Code</label>
-                                                                    <input type="number" class="form-control" ng-model="client.sites[1].address.zipCode">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="img-container" style="width:60%;">
-                                                            <img src="/images/common/placeholder.jpg" alt="..." class="ng-isolate-scope" style="">
-                                                        </div>
-                                                        <button class="btn btn-link">
-                                                            <i class="fa fa-upload"></i> Add Photo
-                                                            <div class="ripple-container"></div>
-                                                        </button>
-                                                    </div>
-                                                    <div class="col-md-1">
-                                                        <div class="td-actions">
-                                                            <button type="button" rel="tooltip" data-placement="left" title="" class="btn btn-link" data-original-title="Remove item" aria-describedby="tooltip143066">
-                                                                <i class="material-icons">close</i>
-                                                                <div class="ripple-container"></div></button>
-                                                        </div>
-                                                    </div>
+                                                    <hr/>
+                                                    <hr/>
                                                 </div>
                                                 <hr/>
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <button class="btn btn-rose btn-link btn-block">
-                                                            Add Another Contact<div class="ripple-container"></div>
+                                                        <button class="btn btn-rose btn-link btn-block" ng-click="addNewSite(client.sites)">
+                                                            Add New Site<div class="ripple-container"></div>
                                                         </button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane" id="link3">
-                                                Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+                                            <div class="tab-pane" id="link3" ng-class="{'active show': tabs[2]}">
+                                                This is Asset Tab
                                                 <br>
-                                                <br>Dynamically innovate resource-leveling customer service for state of the art customer service.
                                             </div>
                                         </div>
                                     </div>

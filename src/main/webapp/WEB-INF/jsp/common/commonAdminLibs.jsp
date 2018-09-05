@@ -2,16 +2,6 @@
          pageEncoding="ISO-8859-1" %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942978-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-119942978-1');
-</script>
-
 <!-- If you using JSON, then it is not possible to submit the CSRF token within an HTTP parameter.
 Instead you can submit the token within a HTTP header. A typical pattern would be to include the CSRF token within your meta tags. -->
 <meta name="_csrf" content="${_csrf.token}"/>

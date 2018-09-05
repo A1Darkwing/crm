@@ -20,6 +20,7 @@ public class Contact {
   private Collection<Phone> phones;
   private Collection<Email> emails;
   private Collection<CustomField> customFields;
+  private Integer imageIndex;
   
   public Contact() { 
     super();
@@ -95,5 +96,8 @@ public class Contact {
   }
   public void setCustomFields(Collection<CustomField> customFields) {
     this.customFields = customFields;
+  }
+  public Integer getImageIndex() {
+    return imageIndex;
   }
 }
