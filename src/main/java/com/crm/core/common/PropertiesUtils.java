@@ -37,6 +37,10 @@ public class PropertiesUtils {
     if (env != null) {
       String propKey = env + "." + key;
       value = properties.getProperty(propKey);
+    } else {
+      //Default to dev
+      String propKey = "dev" + "." + key;
+      value = properties.getProperty(propKey);
     }
     // If cannot find it, find the default property
     if (StringUtils.isBlank(value)) {
