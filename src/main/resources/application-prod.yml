@@ -18,7 +18,7 @@ server:
 #-- Application Configuration
 app:
   image:
-    path: /home/mr_tranlethanh/crm/images
+    path: ./src/main/resources/static/images/common/upload/
     size: 8000000
     maxWidth: 1200
     maxHeight: 1200
