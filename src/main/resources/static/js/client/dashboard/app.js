@@ -1,4 +1,4 @@
-var module = angular.module('dashboardApp', ['interceptor', 'ngRoute', 'ngResource', 'commonModule', 'i18n']);
+var module = angular.module('dashboardApp', ['interceptor', 'ngRoute', 'ngResource', 'commonModule']);
 
 // Trigger the initiation of UI when ng-view is loaded via AngularJS Routes
 module.run(function ($rootScope, $location) {

@@ -1,13 +1,10 @@
 module.controller('ClientController',[
   '$scope',
-  '$rootScope',
   'clientService', 
   'clientsData',
   'clientModel',
-  '$translate',
-  '$filter',
   '$timeout',
-  function($scope, $rootScope, clientService, clientsData, clientModel, $translate, $filter, $timeout) {
+  function($scope, clientService, clientsData, clientModel, $timeout) {
 	 $scope.clientsSource = [];
 	 $scope.emailTypes = ["", "Main", "Secondary", "Other"];
 	 $scope.tabs = [true, false, false];

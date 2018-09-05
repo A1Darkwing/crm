@@ -78,29 +78,16 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <script src="/libs/sockjs-client/dist/sockjs.min.js"></script>
 <script src="/libs/stomp-websocket/lib/stomp.min.js"></script>
 <script src="/js/common/module/stomp-client.js"></script>
-<script src="/js/directive/on-scroll-directive.js"></script>
 <script src="/libs/ng-idle/angular-idle.min.js"></script>
-<script src="/js/directive/cs-compile-directive.js"></script>
 
 <!-- Interceptors -->
 <script src="/js/common/interceptors/exception-interceptor.js"></script>
 
 <!-- Common -->
 <script src="/js/common/common.js"></script>
-<script src="/js/common/validation-utils.js"></script>
-<script src="/js/common/form-meta-constant.js"></script>
 <script src="/js/common/services/ajax-service.js"></script>
-<script src="/js/common/services/validation-service.js"></script>
-<script src="/js/directive/input-directive.js"></script>
-<script src="/js/common/services/validation-service-new.js"></script>
-<script src="/js/directive/select-directive.js"></script>
-<script src="/js/directive/combo-datetime-picker-directive.js"></script>
-<script src="/js/directive/tags-input-directive.js"></script>
-<script src="/js/directive/upload-simple-directive.js"></script>
-<script src="/js/directive/carousel-directive.js"></script>
 <script src="/js/common/module/angular-location-update.js"></script>
 <script src="/js/common/common-module.js"></script>
-<script src="/js/common/module/i18n-admin.js"></script>
 
 <!-- Angular Tags input -->
 <script src="/libs/ng-tags-input/build/ng-tags-input.min.js"></script>
@@ -123,9 +110,6 @@ Instead you can submit the token within a HTTP header. A typical pattern would b
 <link rel="stylesheet" href="/libs/pnotify/dist/pnotify.buttons.css"/>
 <link rel="stylesheet" href="/libs/ionicons/dist/css/ionicons.min.css"/>
 <link rel="stylesheet" type="text/css" href="/libs/animate.css/animate.css">
-
-<!-- Upload -->
-<script src="/libs/ng-file-upload/dist/ng-file-upload-all.min.js"></script>
 
 <script src="/libs/angular-loading-bar/build/loading-bar.js"></script>
 <link rel="stylesheet" type="text/css" href="/libs/angular-loading-bar/build/loading-bar.css">
