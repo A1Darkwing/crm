@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "heroku-prebuild": "yarn cache clean",
+    "heroku-postbuild": "yarn install"
+  },
   "dependencies": {
     "angular": "^1.7.0",
     "angular-animate": "^1.7.0",
@@ -58,6 +62,7 @@
     "underscore": "^1.8.3"
   },
   "engines": {
+    "node": "8.9.4",
     "yarn": ">= 1.0.0"
   },
   "resolutions": {
@@ -74,5 +79,6 @@
     "datatables.net": "1.10.16",
     "datatables.net-dt": "1.10.16",
     "angular-cookies": "1.7.2"
-  }
+  },
+  "license": "MIT"
 }

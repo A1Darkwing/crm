@@ -2,17 +2,19 @@
 spring:
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      database: crm
+      host: ds231720.mlab.com
+      port: 31720
+      database: heroku_b6pv7192
+      username: heroku_b6pv7192
+      password: nsopvrhcaq2abqccf7ovcqlli
   freemarker:
     template-loader-path: classpath:/
-      
+
 server:
   port: 8080
   context-path: /
-   
-    
+
+
 #-- Application Configuration
 app:
   image:
@@ -22,5 +24,4 @@ app:
     maxHeight: 1200
     location: /home/mr_tranlethanh/crm
 
-  url: crm-client-215407.appspot.com
-
+  url: crm-zamo-demo.herokuapp.com
