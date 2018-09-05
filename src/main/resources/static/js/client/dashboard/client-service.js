@@ -1,6 +1,5 @@
-module.service("clientService", [ '$resource', '$q', '$rootScope',
-		'$routeParams', 'ajax', '$translate',
-		function($resource, $q, $rootScope, $routeParams, ajax, $translate) {
+module.service("clientService", ['$q', '$routeParams', 'ajax',
+		function($q, $routeParams, ajax) {
 		
 		/**
 		 * init client
@@ -14,17 +13,13 @@ module.service("clientService", [ '$resource', '$q', '$rootScope',
 			return deferred.promise;
 		};
 		
-		  this.insertClient = function(client) {
-		    return ajax.post('/client/data/insert', client);
-		  }
-		  
-		  this.updateClient = function(charityField) {
-		    return ajax.post('/client/data/update', client);
-		  }
-		  
-		  this.removeClient = function(clientId) {
-		    return ajax.post('/client/data/remove', clientId);
-		  }
+	  this.insertClient = function(client) {
+	    return ajax.post('/client/data/insert', client);
+	  }
+	  
+	  this.removeClient = function(clientId) {
+	    return ajax.post('/client/data/remove', clientId);
+	  }
 		  
 		/**
 		 * load all clients
