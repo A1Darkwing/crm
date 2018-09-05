@@ -22,6 +22,5 @@ app:
     size: 8000000
     maxWidth: 1200
     maxHeight: 1200
-    location: /home/mr_tranlethanh/crm
 
   url: crm-zamo-demo.herokuapp.com
